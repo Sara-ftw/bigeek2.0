@@ -1,15 +1,152 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BI-GEEK 2.0</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigeek</title>
+    <link  rel="stylesheet" href="css/style.css" > 
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
 </head>
 <body>
+    <!-- section navbar-->
+    <header id="header">
+  <div class="logo">
+    <img src="image/logo.avif" alt="Logo BI-Geek" />
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Programmes</a></li>
+      <li><a href="#">Formations</a></li>
+      <li><a href="#">Témoignages</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="auth-buttons">
+    <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
+    <button class="btn secondary">Se connecter</button>
+  </div>
+</header>
 
-  <h1>Bienvenue sur BI-GEEK 2.0</h1>
+<style>
+  /* Conteneur principal : FLEX en ligne */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: transparent;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
 
-  <script src="js/script.js"></script>
+  /* Logo : taille fixe, ne s’étire pas */
+  .logo {
+    flex-shrink: 0;
+  }
+  .logo img {
+    height: 45px;
+    display: block;
+  }
+
+  /* Nav : prend toute la place restante et centre les liens */
+  nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Menu en ligne */
+  nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Liens */
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap; /* empêche les retours à la ligne */
+  }
+
+  /* Boutons à droite */
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+  }
+
+  /* Bouton Se connecter */
+  .auth-buttons button {
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Icone enveloppe */
+  .contact-icon {
+    font-size: 20px;
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  /* Au scroll */
+  header.scrolled {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  header.scrolled nav a,
+  header.scrolled .contact-icon,
+  header.scrolled .auth-buttons button {
+    color: #7b2ff7;
+  }
+  header.scrolled .auth-buttons button {
+    background: #7b2ff7;
+    border-color: #7b2ff7;
+    color: white;
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if(window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
