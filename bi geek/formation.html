@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BI-Geek - Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href=".css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Ajoute dans <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+<!-- Google Fonts import -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+       .hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to right, rgba(54, 42, 93, 0.8), rgba(111, 63, 95, 0.8)),
+              url('image/fond.jpg') no-repeat center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 40px;
+  text-align: left;
+  overflow: hidden;
+}
+</style>
+
+
+<style>
+
+    .accordion-container {
+      max-width: 900px;
+      margin: 50px auto;
+        box-sizing: border-box;
+
+    }
+    .accordion-item {
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    .accordion-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .accordion-header {
+      background: linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+      padding: 25px 35px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+      width: 100%;
+      text-align: left;
+      letter-spacing: 0.03em;
+      user-select: none;
+      transition: background 0.4s ease;
+    }
+    .accordion-header:hover {
+      background: linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.5));
+    }
+    .arrow {
+      font-size: 2.2rem;
+      transition: transform 0.35s ease;
+      display: inline-block;
+      user-select: none;
+    }
+    .accordion-item.active .arrow {
+      transform: rotate(45deg);
+      color: #ffcc00;
+      text-shadow: 0 0 6px #ffcc00aa;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(10, 10, 10, 0.85);
+      padding: 0 35px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #eee;
+      transition: max-height 0.6s cubic-bezier(0.86, 0, 0.07, 1), padding 0.5s ease;
+      will-change: max-height, padding;
+      border-radius: 0 0 15px 15px;
+    }
+    .accordion-item.active .accordion-content {
+      padding: 20px 35px 30px 35px;
+    }
+    .accordion-content p {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      margin: 0;
+    }
+    .accordion-item.active .accordion-content p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+
+
+<style>
+.intro-projets {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.nos-projets {
+  padding: 60px 20px;
+  background: #1a1a2e;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f9f9f9;
+  margin-bottom: 40px;
+}
+
+.grid-projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.carte-projet {
+  background: #252540;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.carte-projet:hover {
+  transform: translateY(-10px);
+}
+
+.carte-projet img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.contenu-projet {
+  padding: 20px;
+}
+
+.contenu-projet h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.contenu-projet p {
+  margin: 10px 0;
+  color: #cfcfcf;
+}
+
+.stagiaire {
+  font-style: italic;
+  color: #aaaaaa;
+}
+
+.btn-projet {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffce00;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-projet:hover {
+  background: #ffaa00;
+}
+
+  .card-projet {
+  background: #1e1e2f;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.card-projet:hover {
+  transform: translateY(-5px);
+}
+.projet-content {
+  padding: 15px;
+}
+
+
+
+  #trusted-clients {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f7f6ff 0%, #e0dbff 100%);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #trusted-clients h2 {
+    font-size: 2.8rem;
+    color: #4b3a89;
+    font-weight: 900;
+    margin-bottom: 3rem;
+  }
+
+  .clients-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .client-logo {
+    width: 140px;
+    filter: grayscale(90%);
+    transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 20px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(75, 58, 137, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .client-logo img {
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  .client-logo:hover {
+    filter: none;
+    transform: scale(1.15);
+    box-shadow: 0 12px 35px rgba(123, 47, 247, 0.4);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .clients-wrapper {
+      gap: 2rem 3rem;
+    }
+    .client-logo {
+      width: 110px;
+      padding: 0.7rem;
+    }
+    .client-logo img {
+      max-height: 50px;
+    }
+  }
+
+
+  body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+.section-a-propos {
+  padding: 60px 20px;
+  background-color: #1e1e2e;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.titre-principal {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffce00;
+}
+
+.intro-apropos {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #cccccc;
+}
+
+.bloc-apropos {
+  margin-bottom: 40px;
+  background-color: #252540;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.bloc-apropos h2 {
+  font-size: 1.6rem;
+  color: #ffce00;
+  margin-bottom: 10px;
+}
+
+.bloc-apropos p, .valeurs li {
+  color: #dddddd;
+  font-size: 1rem;
+}
+
+.valeurs {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.valeurs li {
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+</style>
+
+
+<style>
+  
+
+  #revolution-bi {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  #revolution-bi h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #4a3f7d;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+
+  #revolution-bi h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #7d64c7;
+    margin-bottom: 2.2rem;
+    text-align: center;
+  }
+
+  .accordion-container {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .accordion-item {
+    position: relative;
+    border-radius: 14px;
+    margin-bottom: 1.8rem;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgb(0 0 0 / 0.07);
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item:hover {
+    transform: scale(1.02);
+  }
+
+  /* Overlay sombre pour lisibilité */
+  .accordion-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%);
+    border-radius: 14px;
+    z-index: 0;
+  }
+
+  .accordion-header {
+    position: relative;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 20px 28px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #d0c4ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    user-select: none;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .accordion-header:hover {
+    color: #b594ff;
+  }
+
+  .job-title {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #a07fff;
+  }
+
+  .arrow {
+    font-size: 1.6rem;
+    color: #b594ff;
+    transition: transform 0.4s ease;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .accordion-item.active .arrow {
+    transform: rotate(45deg);
+    animation: none;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 28px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 
+      max-height 0.45s ease, 
+      opacity 0.4s ease 0.1s, 
+      transform 0.4s ease 0.1s, 
+      padding 0.4s ease;
+    border-radius: 0 0 14px 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 350px;
+    padding: 18px 28px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    #revolution-bi {
+      padding: 0 10px;
+      margin: 30px auto;
+    }
+  }
+.contact-footer-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #7b2ff7, #9e5fff);
+  color: white;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.9rem 1.8rem;
+  border-radius: 40px;
+  box-shadow: 0 8px 20px rgba(123, 47, 247, 0.5);
+  cursor: pointer;
+  user-select: none;
+  z-index: 9999;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: pulseEmoji 2.5s infinite;
+}
+
+.contact-footer-right:hover {
+  box-shadow: 0 12px 30px rgba(123, 47, 247, 0.8);
+  transform: scale(1.05);
+}
+
+/* Animation pulse sur l’emoji */
+@keyframes pulseEmoji {
+  0%, 100% {
+    text-shadow: 0 0 6px #cbbcff;
+  }
+  50% {
+    text-shadow: 0 0 12px #e3d1ff;
+  }
+}
+#trusted-clients {
+  padding: 3rem 1rem;
+  background: #f9f8ff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#trusted-clients h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #4b3a89;
+  margin-bottom: 2rem;
+}
+
+.clients-logos {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #7b2ff7 transparent;
+}
+
+.clients-logos::-webkit-scrollbar {
+  height: 6px;
+}
+
+.clients-logos::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.clients-logos::-webkit-scrollbar-thumb {
+  background-color: #7b2ff7;
+  border-radius: 3px;
+}
+
+.client-logo {
+  flex: 0 0 auto;
+  width: 160px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(123, 47, 247, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.client-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(123, 47, 247, 0.2);
+}
+
+.client-logo img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.client-logo p {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4b3a89;
+}
+
+</style>
+
+</head>
+<body>
+  <header class="scrolled">
+    <div class="logo">
+      <img src="image/logo.avif" alt="Logo BI-Geek">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prog.html">Programmes</a></li>
+        <li><a href="formation.html">Formations</a></li>
+        <li><a href="#temoignages">Témoignages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
+      <button class="btn secondary">Se connecter</button>
+    </div>
+  </header>
+
+<section id="projets" class="nos-projets">
+  <p class="intro-projets">
+      Chez BI-Geek, nos stagiaires concrétisent leurs apprentissages à travers des projets innovants et professionnels.
+    </p>
+
+    <h2 class="section-title">🎓 Nos Projets de Stagiaires</h2>
+
+  <div class="container">
+    <h2 class="section-title">🎓 Nos Projets de Stagiaires</h2>
+    <div class="grid-projets">
+      
+      <div class="carte-projet">
+        <img src="images/projet1.jpg" alt="Projet Application Bibliothèque">
+        <div class="contenu-projet">
+          <h3>Application Bibliothèque</h3>
+          <p>Un système de gestion de livres pour les bibliothèques.</p>
+          <p class="stagiaire">👤 Didi Charfi – Formation Web</p>
+          <a href="#" class="btn-projet">Voir plus</a>
+        </div>
+      </div>
+
+      <div class="carte-projet">
+        <img src="images/projet2.jpg" alt="Projet Plateforme E-learning">
+        <div class="contenu-projet">
+          <h3>Plateforme E-learning</h3>
+          <p>Une plateforme interactive pour suivre des cours en ligne.</p>
+          <p class="stagiaire">👤 Amira Ben Salem – Fullstack JS</p>
+          <a href="#" class="btn-projet">Voir plus</a>
+        </div>
+      </div>
+
+      <!-- Ajoute d'autres cartes ici -->
+
+    </div>
+  </div>
+</section>
+
+
+<section id="a-propos" class="section-a-propos">
+  <div class="container">
+
+    <!-- Intro -->
+    <h1 class="titre-principal">À propos de BI-Geek</h1>
+    <p class="intro-apropos">
+      Chez BI-Geek, nous croyons que chacun mérite une formation de qualité dans le numérique. Notre mission : vous préparer concrètement aux métiers du futur.
+    </p>
+
+    <!-- Mission -->
+    <div class="bloc-apropos">
+      <h2>🎯 Notre mission</h2>
+      <p>
+        Rendre la formation tech accessible à tous grâce à une pédagogie innovante, basée sur la pratique, la collaboration et l’autonomie.
+      </p>
+    </div>
+
+    <!-- Valeurs -->
+    <div class="bloc-apropos">
+      <h2>💡 Nos valeurs</h2>
+      <ul class="valeurs">
+        <li>🔍 Transparence & accompagnement</li>
+        <li>🤝 Collaboration & entraide</li>
+        <li>🚀 Pratique & projets concrets</li>
+        <li>🌱 Évolution continue</li>
+      </ul>
+    </div>
+
+    <!-- Méthode -->
+    <div class="bloc-apropos">
+      <h2>🛠️ Notre méthode</h2>
+      <p>
+        Tous nos parcours sont construits autour de projets réels et encadrés par des professionnels passionnés. Ici, on apprend en faisant.
+      </p>
+    </div>
+
+    <!-- Équipe (optionnel) -->
+    <div class="bloc-apropos">
+      <h2>👩‍🏫 Notre équipe</h2>
+      <p>
+        Notre équipe est composée de formateurs expérimentés, de coachs pédagogiques et d’experts du numérique. Ensemble, nous formons un cadre humain et motivant.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="challenges" class="glass-challenges">
+  <div class="container">
+    <h2 class="glass-title">Relevez nos Défis</h2>
+    <p class="glass-subtitle">Appliquez vos compétences dans des challenges concrets, en équipe ou en solo !</p>
+
+    <div class="glass-grid">
+      <!-- Challenge 1 -->
+      <div class="glass-card">
+        <div class="glass-img" style="background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800');"></div>
+        <div class="glass-content">
+          <h3>Hackathon Data</h3>
+          <p class="glass-info">48h intensives • Par équipe</p>
+          <p class="glass-desc">Créez une solution autour de la visualisation et l’analyse des données BI dans un temps limité.</p>
+          <a class="glass-button" href="#">Participer</a>
+        </div>
+      </div>
+
+      <!-- Challenge 2 -->
+      <div class="glass-card">
+        <div class="glass-img" style="background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800');"></div>
+        <div class="glass-content">
+          <h3>Challenge Dev Web</h3>
+          <p class="glass-info">1 semaine • Solo ou duo</p>
+          <p class="glass-desc">Développez un projet full-stack à partir d’un cahier des charges et défendez-le devant un jury.</p>
+          <a class="glass-button" href="#">Rejoindre</a>
+        </div>
+      </div>
+
+      <!-- Challenge 3 -->
+      <div class="glass-card">
+        <div class="glass-img" style="background-image: url('https://images.unsplash.com/photo-1556742400-b5c16c7bfa77?auto=format&fit=crop&w=800');"></div>
+        <div class="glass-content">
+          <h3>Quiz Time</h3>
+          <p class="glass-info">30 min • Instantané</p>
+          <p class="glass-desc">Testez vos connaissances techniques en temps réel et grimpez dans le classement BI-Geek !</p>
+          <a class="glass-button" href="#">Démarrer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- En bas du body, avant </body>, ajoute ce script -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+<script src="script.js"></script>
+
+
+
+<div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
+  📞 Contactez-nous
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+</body>
+</html>
