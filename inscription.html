@@ -51,77 +51,86 @@
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="contact-icon"><i class="fas fa-envelope"></i></a>
             <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
-
         </div>
-  </header>
+    </header>
+
+<div class="contact-popup" id="contactPopup">
+  <span class="close-btn" id="closeContactPopup">&times;</span>
+  <h3>Contactez-nous</h3>
+  <p>Email : contact@bi-geek.net</p>
+  <p>Téléphone : +216 12 345 678</p>
+</div>
 
 
-    <section id="about-bi-geek" class="about-section">
-    <h2>À propos de BI-Geek</h2>
-        <p>
-            Chez <strong>BI-Geek</strong>, nous croyons que chacun mérite une formation de qualité dans le numérique.<br><br>
-            Notre mission : vous préparer concrètement aux métiers du futur.
-        </p>
-    </section>
-
-    <section class="apropos-section">
-        <div class="apropos-grid">
-            <div class="apropos-card" style="background-image: url('image/1.png');">
-                <div class="card-content">
-                    <h3>Qui sommes-nous ?</h3>
-                    <p>BI-GEEK est née de la vision de pionniers de la formation universitaire, experts en nouvelles technologies et consulting.</p>
-                </div>
-            </div>
-
-            <div class="apropos-card" style="background-image: url('image/2.png');">
-                <div class="card-content">
-                    <h3>Notre mission</h3>
-                    <p>Rendre la formation tech accessible à tous grâce à une pédagogie innovante, basée sur la pratique, la collaboration et l’autonomie.</p>
-                </div>
-            </div>
-            <div class="apropos-card" style="background-image: url('image/2.png');">
-                <div class="card-content">
-                    <h3>Notre mission</h3>
-                    <p>Rendre la formation tech accessible à tous grâce à une pédagogie innovante, basée sur la pratique, la collaboration et l’autonomie.</p>
-                </div>
-            </div>
-
-            <div class="apropos-card" style="background-image: url('image/2.png');">
-                <div class="card-content">
-                    <h3>Notre mission</h3>
-                    <p>Rendre la formation tech accessible à tous grâce à une pédagogie innovante, basée sur la pratique, la collaboration et l’autonomie.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
 
-
-    <section class="section-contact">
-        <h2 class="contact-title">Restons en contact</h2>
-        <p class="contact-subtitle">On vous répond sous 24h !</p>
-
-        <div class="contact-form-glass">
-            <form>
-              <div class="input-group">
-                <input type="text" required>
-                <label>Nom</label>
-              </div>
-              <div class="input-group">
-                <input type="email" required>
-                <label>Email</label>
-              </div>
-              <div class="input-group">
-                <textarea required></textarea>
-                <label>Message</label>
-              </div>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </section>
-
+    <div class="register-container">
+  <h2><i class="fas fa-user-plus"></i> Créer un compte</h2>
+  <form class="register-form">
+    <div class="form-row">
+      <div class="input-icon">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Nom" name="lastname" required />
+      </div>
+      <div class="input-icon">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Prénom" name="firstname" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-icon">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="Adresse email" name="email" required />
+      </div>
+      <div class="input-icon">
+        <i class="fas fa-phone"></i>
+        <input type="tel" placeholder="Numéro de téléphone" name="phone" pattern="[0-9]{8,15}" title="Numéro entre 8 et 15 chiffres" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-icon">
+        <i class="fas fa-calendar"></i>
+        <input type="number" placeholder="Âge" name="age" min="13" max="120" required />
+      </div>
+      <div class="input-icon select-icon">
+        <i class="fas fa-venus-mars"></i>
+        <select name="sex" required>
+          <option value="" disabled selected>Sexe</option>
+          <option value="homme">Homme</option>
+          <option value="femme">Femme</option>
+          <option value="autre">Autre</option>
+          <option value="prefere_ne_pas_dire">Préfère ne pas dire</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-icon" style="flex: 1 1 100%;">
+        <i class="fas fa-home"></i>
+        <input type="text" placeholder="Adresse" name="address" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-icon" style="flex: 1 1 100%;">
+        <i class="fas fa-heart"></i>
+        <input type="text" placeholder="Centres d’intérêt (ex: Tech, Sport, Art...)" name="interests" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-icon">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Mot de passe" name="password" required />
+      </div>
+      <div class="input-icon">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Confirmer le mot de passe" name="confirm_password" required />
+      </div>
+    </div>
+    <button type="submit" class="btn-submit">S’inscrire</button>
+  </form>
+</div>
 
 
     <footer id="contact">
@@ -134,6 +143,36 @@
         <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
     </footer>
 
+
+    <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
+        📞
+    </div>
+    
+
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const contactIcon = document.querySelector('.contact-icon');
+        const contactPopup = document.getElementById('contactPopup');
+        const closeBtn = document.getElementById('closeContactPopup');
+
+        contactIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        contactPopup.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+        contactPopup.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(e) {
+        if (e.target === contactPopup) {
+            contactPopup.style.display = 'none';
+        }
+        });
+    });
+    </script>
     <!-- CSS AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -146,16 +185,10 @@
     <!-- Ton script.js si tu en as un -->
     <script src="js/script.js"></script>
 
-
-
-
-
-    <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
-        📞 
-    </div>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script> AOS.init(); </script>
+
+>
 
 
 </body>

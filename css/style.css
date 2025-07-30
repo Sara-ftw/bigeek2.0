@@ -64,6 +64,7 @@ header {
   }
 
 header.scrolled {
+  height: 70px; /* ajuster ici selon ton header */
   background: var(--white);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -232,6 +233,44 @@ body.prog-page header nav a,
 body.prog-page .contact-icon {
   color: var(--hero-color);
 }
+
+
+/****************/
+.contact-popup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 320px;
+  background: rgba(30, 30, 70, 0.95);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  padding: 20px;
+  display: none; /* caché par défaut */
+  z-index: 2000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffcb74;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
 
 
 /* ------------llproprammes sectionnnnnnnn--------------------*/
@@ -1333,28 +1372,31 @@ footer {
 
 
 
-
 .contact-footer-right {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  width: 60px;           /* largeur du cercle */
+  height: 60px;          /* hauteur du cercle */
   background: linear-gradient(135deg, #7b2ff7, #9e5fff);
   color: white;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
-  padding: 0.9rem 1.8rem;
-  border-radius: 40px;
+  border-radius: 50%;    /* fait un cercle */
   box-shadow: 0 8px 20px rgba(123, 47, 247, 0.5);
   cursor: pointer;
   user-select: none;
   z-index: 9999;
-  font-size: 1.15rem;
+  font-size: 1.5rem;     /* taille du texte */
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   animation: pulseEmoji 2.5s infinite;
 }
+
 
 .contact-footer-right:hover {
   box-shadow: 0 12px 30px rgba(123, 47, 247, 0.8);
@@ -1491,4 +1533,240 @@ footer a {
 .card-content p {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+
+
+/*************connecterrrrrrrrrrr*********/
+.login-glass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e3c, #5c4d7d);
+  padding: 40px 20px;
+}
+
+.login-glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+.login-glass-box h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #ffcb74;
+}
+
+.input-icon {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #ccc;
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-icon input::placeholder {
+  color: #ddd;
+}
+
+.input-icon input:focus {
+  background-color: rgba(255,255,255,0.25);
+}
+
+.login-glass-box button {
+  width: 100%;
+  padding: 12px;
+  background: #ffcb74;
+  color: #222;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-glass-box button:hover {
+  background: #f2b400;
+  transform: scale(1.03);
+}
+
+.login-links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-links a {
+  color: #ffcb74;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/*************inscription*********/
+.register-container {
+    margin: 0 auto 60px; /* margin-bottom : espace sous le formulaire */
+
+  max-width: 900px;
+  margin-top: 80px; /* mettre au moins la hauteur du header + un peu */
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(30, 30, 70, 0.85);
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(30, 30, 70, 0.7);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.register-container h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Chaque input avec icône */
+.input-icon {
+  flex: 1 1 48%; /* 2 colonnes */
+  position: relative;
+}
+
+.input-icon input,
+.input-icon select {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.05rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.input-icon input::placeholder,
+.input-icon select option {
+  color: #ccc;
+}
+
+.input-icon input:focus,
+.input-icon select:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ffcb74;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Select spécial avec flèche */
+.select-icon select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.select-icon::after {
+  content: "\f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffcb74;
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+/* Bouton */
+.btn-submit {
+  background: linear-gradient(135deg, #7b2ff7, #9e5fff);
+  border: none;
+  padding: 16px 0;
+  border-radius: 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #9e5fff, #7b2ff7);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .input-icon {
+    flex: 1 1 100% !important;
+  }
 }
