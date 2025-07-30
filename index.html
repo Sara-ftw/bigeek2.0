@@ -52,74 +52,6 @@
 </style>
 
 
-
-
-<style>
-  #trusted-clients {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f7f6ff 0%, #e0dbff 100%);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  #trusted-clients h2 {
-    font-size: 2.8rem;
-    color: #4b3a89;
-    font-weight: 900;
-    margin-bottom: 3rem;
-  }
-
-  .clients-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem 5rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .client-logo {
-    width: 140px;
-    filter: grayscale(90%);
-    transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border-radius: 20px;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 4px 15px rgba(75, 58, 137, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .client-logo img {
-    max-width: 100%;
-    max-height: 60px;
-    object-fit: contain;
-  }
-
-  .client-logo:hover {
-    filter: none;
-    transform: scale(1.15);
-    box-shadow: 0 12px 35px rgba(123, 47, 247, 0.4);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .clients-wrapper {
-      gap: 2rem 3rem;
-    }
-    .client-logo {
-      width: 110px;
-      padding: 0.7rem;
-    }
-    .client-logo img {
-      max-height: 50px;
-    }
-  }
-</style>
-
-
 </head>
 <body>
   <header id="header">
@@ -131,8 +63,9 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="prog.html">Programmes</a></li>
         <li><a href="formation.html">Formations</a></li>
-        <li><a href="#temoignages">Témoignages</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="Projet.html" >Projets </a></li>
+        <li><a href="propos.html">A propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
@@ -142,290 +75,271 @@
   </header>
 
   <section class="hero" id="hero">
-  <div id="particles-js"></div>  <!-- Container particules -->
-  <div class="hero-content">
-    <h1>Learning Business Intelligence</h1>
-    <h2>Une école innovante à la hauteur des enjeux</h2>
-    <p><strong>BI-Geek</strong>, bien plus qu'une école, un véritable tremplin pour l'emploi.</p>
-    <a href="#programmes" class="cta-btn">Découvrir nos programmes</a>
-    <a href="#programmes" class="cta-btn">Candidater</a>
-  </div>
-</section>
-
-
-
-
-
-<style>
-.job-section {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-.job-section h2 {
-  font-size: 3rem;
-  color: #7b2ff7;
-  margin-bottom: 50px;
-  letter-spacing: 4px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.job-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.job-section h2 {
-  animation: slideIn 1s ease forwards;
-}
-
-
-</style>
-
-<section id="programmes" class="programmes-section">
-  <div class="container">
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-6">
-        <img src="image/elearning-classroom.jpg"
-             alt="Programmes BI-Geek" class="img-fluid rounded-4 shadow">
-      </div>
-      <div class="col-lg-6 text-lg-start text-center">
-        <h2 class="section-title">Nos Programmes</h2>
-        <p class="lead text-muted mb-4">Formations innovantes adaptées aux besoins du marché. Que vous soyez débutant ou confirmé, trouvez votre voie parmi nos cursus !</p>
-        <a href="#inscription" class="btn btn-purple">Voir toutes les formations</a>
-      </div>
+    <div id="particles-js"></div>  <!-- Container particules -->
+    <div class="hero-content">
+      <h1>Learning Business Intelligence</h1>
+      <h2>Une école innovante à la hauteur des enjeux</h2>
+      <p><strong>BI-Geek</strong>, bien plus qu'une école, un véritable tremplin pour l'emploi.</p>
+      <a href="#programmes" class="cta-btn">Découvrir nos programmes</a>
+      <a href="#programmes" class="cta-btn">Candidater</a>
     </div>
+  </section>
 
-    <div class="row gy-4">
+
+
+
+  <section id="programmes" class="programmes-section">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+          <img src="image/elearning-classroom.jpg"
+              alt="Programmes BI-Geek" class="img-fluid rounded-4 shadow">
+        </div>
+        <div class="col-lg-6 text-lg-start text-center">
+          <h2 class="section-title">Nos Programmes</h2>
+          <p class="lead text-muted mb-4">Formations innovantes adaptées aux besoins du marché. Que vous soyez débutant ou confirmé, trouvez votre voie parmi nos cursus !</p>
+          <a href="#inscription" class="btn btn-purple">Voir toutes les formations</a>
+        </div>
+      </div>
+
+      <div class="row gy-4">
       <!-- Carte 1 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card programme-card h-100">
-          <img src="image/data-analytics-business-option-masters_0.jpg" class="card-img-top" alt="Data Analytics">
-          <div class="card-body text-center">
-            <h5 class="card-title">Data Analytics</h5>
-            <p class="text-muted">25 semaines • 3000 DT</p>
-            <a href="#" class="modern-btn">
+        <div class="col-md-6 col-lg-3">
+          <div class="card programme-card h-100">
+            <img src="image/data-analytics-business-option-masters_0.jpg" class="card-img-top" alt="Data Analytics">
+            <div class="card-body text-center">
+              <h5 class="card-title">Data Analytics</h5>
+              <p class="text-muted">25 semaines • 3000 DT</p>
+              <a href="#" class="modern-btn">
                 <span>Je m'inscris</span>
                 <i class="fas fa-arrow-right"></i>
-            </a>
-
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       <!-- Carte 2 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card programme-card h-100">
-          <img src="image/full-stack-js.jpg" class="card-img-top" alt="Full Stack JS">
-          <div class="card-body text-center">
-            <h5 class="card-title">Full Stack JS</h5>
-            <p class="text-muted">23 semaines • 2500 DT</p>
-            <a href="#" class="modern-btn">
+        <div class="col-md-6 col-lg-3">
+          <div class="card programme-card h-100">
+            <img src="image/full-stack-js.jpg" class="card-img-top" alt="Full Stack JS">
+            <div class="card-body text-center">
+              <h5 class="card-title">Full Stack JS</h5>
+              <p class="text-muted">23 semaines • 2500 DT</p>
+              <a href="#" class="modern-btn">
                 <span>Je m'inscris</span>
                 <i class="fas fa-arrow-right"></i>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
       <!-- Carte 3 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card programme-card h-100">
-          <img src="image/Agiles-Projektmanagement.jpg" class="card-img-top" alt="Scrum Master">
-          <div class="card-body text-center">
-            <h5 class="card-title">Scrum Master</h5>
-            <p class="text-muted">3 jours • 700 DT</p>
-            <a href="#" class="modern-btn">
+        <div class="col-md-6 col-lg-3">
+          <div class="card programme-card h-100">
+            <img src="image/Agiles-Projektmanagement.jpg" class="card-img-top" alt="Scrum Master">
+            <div class="card-body text-center">
+              <h5 class="card-title">Scrum Master</h5>
+              <p class="text-muted">3 jours • 700 DT</p>
+              <a href="#" class="modern-btn">
                 <span>Je m'inscris</span>
                 <i class="fas fa-arrow-right"></i>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Carte 4 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card programme-card h-100">
-          <img src="image/python.jpg" class="card-img-top" alt="Python">
-          <div class="card-body text-center">
-            <h5 class="card-title">Langage Python</h5>
-            <p class="text-muted">20 semaines • 2800 DT</p>
-            <a href="#" class="modern-btn">
+        <!-- Carte 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card programme-card h-100">
+            <img src="image/python.jpg" class="card-img-top" alt="Python">
+            <div class="card-body text-center">
+              <h5 class="card-title">Langage Python</h5>
+              <p class="text-muted">20 semaines • 2800 DT</p>
+              <a href="#" class="modern-btn">
                 <span>Je m'inscris</span>
                 <i class="fas fa-arrow-right"></i>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 <!-- SECTION à insérer dans le <body> -->
 <!-- HTML -->
 
-<section class="bi-revolution" id="revolution-bi"  data-aos="fade-up" data-aos-delay="100">
-  <h2 data-aos="fade-up">Une formation au cœur de la révolution BI</h2>
+  <section class="bi-revolution" id="revolution-bi"  data-aos="fade-up" data-aos-delay="100">
+    <h2 data-aos="fade-up">Une formation au cœur de la révolution BI</h2>
 
-  <div class="bi-tabs-section" data-aos="fade-up" data-aos-delay="150">
-    <div class="tabs-nav">
-      <button class="tab-btn active" data-index="0"> Pratique</button>
-      <button class="tab-btn" data-index="1"> Acteur</button>
-      <button class="tab-btn" data-index="2"> Compétence</button>
+    <div class="bi-tabs-section" data-aos="fade-up" data-aos-delay="150">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-index="0"> Pratique</button>
+        <button class="tab-btn" data-index="1"> Acteur</button>
+        <button class="tab-btn" data-index="2"> Compétence</button>
+      </div>
+
+      <div class="tabs-slider">
+        <div class="tab-slide active" data-index="0">
+          <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="tab-text">
+            <h3>Plongez dans la pratique</h3>
+            <p>L’approche par projets et problèmes (APP) fait de l'apprenant l’acteur principal de sa formation. Cette pédagogie active est basée sur les études de cas, les projets et le travail collaboratif.</p>
+          </div>
+        </div>
+
+        <div class="tab-slide" data-index="1">
+          <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="tab-text">
+            <h3>Devenez acteur de la révolution BI</h3>
+            <p>BI-Geek forme les acteurs BI de demain, prêts à impacter le monde avec leur expertise Data & Intelligence Artificielle. Devenez Data Analyst ou Data Scientist !</p>
+          </div>
+        </div>
+
+        <div class="tab-slide" data-index="2">
+          <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="tab-text">
+            <h3>Différenciez-vous par la double compétence</h3>
+            <p>Chez BI-Geek, nous formons des profils hybrides, aussi à l'aise en technique qu'en management. Un atout stratégique pour le marché de demain.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="tabs-slider">
-      <div class="tab-slide active" data-index="0">
-        <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="tab-text">
-          <h3>Plongez dans la pratique</h3>
-          <p>L’approche par projets et problèmes (APP) fait de l'apprenant l’acteur principal de sa formation. Cette pédagogie active est basée sur les études de cas, les projets et le travail collaboratif.</p>
+
+    <h3 data-aos="fade-up" data-aos-delay="200">Quelques exemples de débouchés</h3>
+
+    <div class="content-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <div class="accordion-container">
+
+        <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80');">
+          <button class="accordion-header">
+            <span class="job-title">Data Scientist</span>
+            <span class="arrow">&#x2795;</span>
+          </button>
+          <div class="accordion-content">
+            <p>Le Data Scientist est un expert qui développe des modèles d’apprentissage automatique dans son entreprise. Il possède un haut niveau de mathématiques, des compétences en développement informatique, une connaissance des infrastructures Big Data et une parfaite compréhension business.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80');">
+          <button class="accordion-header">
+            <span class="job-title">Scrum Master BI</span>
+            <span class="arrow">&#x2795;</span>
+          </button>
+          <div class="accordion-content">
+            <p>Gestion de projets agiles en Intelligence Artificielle. Compétences en infrastructure Big Data et création de modèles Machine Learning. Respect des délais et budgets.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80');">
+          <button class="accordion-header">
+            <span class="job-title">Machine Learning Developer</span>
+            <span class="arrow">&#x2795;</span>
+          </button>
+          <div class="accordion-content">
+            <p>Maintien des performances des modèles ML/DL. Garant de la disponibilité des modèles. Rôle clé dans la chaîne de traitement des données.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=600&q=80');">
+          <button class="accordion-header">
+            <span class="job-title">AI Developer</span>
+            <span class="arrow">&#x2795;</span>
+          </button>
+          <div class="accordion-content">
+            <p>Intervention dans finance, santé, marketing, etc. Création de programmes d’apprentissage machine et gestion de données volumineuses.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="trusted-clients" class="trusted-section">
+    <h2>Ils nous ont fait confiance</h2>
+
+    <div class="logo-slider-container">
+      <button id="prevBtn">←</button>
+
+      <div class="logo-viewport">
+        <div class="logo-slider" id="logoSlider">
+          <div class="client-logo"><img src="image/orange.png" alt="Orange" /></div>
+          <div class="client-logo"><img src="image/bh.png" alt="BH" /></div>
+          <div class="client-logo"><img src="image/esprit.png" alt="Esprit" /></div>
+          <div class="client-logo"><img src="image/bna.png" alt="BNA" /></div>
+          <div class="client-logo"><img src="image/huawi.png" alt="Huawei" /></div>
+          <div class="client-logo"><img src="image/stb.jpeg" alt="STB" /></div>
+          <div class="client-logo"><img src="image/hamila.png" alt="Hamila" /></div>
+          <div class="client-logo"><img src="image/tls.png" alt="TLS" /></div>
         </div>
       </div>
 
-      <div class="tab-slide" data-index="1">
-        <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="tab-text">
-          <h3>Devenez acteur de la révolution BI</h3>
-          <p>BI-Geek forme les acteurs BI de demain, prêts à impacter le monde avec leur expertise Data & Intelligence Artificielle. Devenez Data Analyst ou Data Scientist !</p>
-        </div>
+      <button id="nextBtn">→</button>
+    </div>
+  </section>
+
+
+  <section id="stats-quote" class="section-bg">
+    <div class="stats-container">
+      <div class="stat-item">
+        <h3>+ de 15 000</h3>
+        <p>Étudiants diplômés</p>
       </div>
-
-      <div class="tab-slide" data-index="2">
-        <div class="tab-image" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="tab-text">
-          <h3>Différenciez-vous par la double compétence</h3>
-          <p>Chez BI-Geek, nous formons des profils hybrides, aussi à l'aise en technique qu'en management. Un atout stratégique pour le marché de demain.</p>
-        </div>
+      <div class="stat-item">
+        <h3>+ de 800</h3>
+        <p>Entreprises partenaires internationales</p>
+      </div>
+      <div class="stat-item">
+        <h3>96%</h3>
+        <p>Satisfaction moyenne</p>
       </div>
     </div>
-  </div>
 
-
-  <h3 data-aos="fade-up" data-aos-delay="200">Quelques exemples de débouchés</h3>
-
-  <div class="content-wrapper" data-aos="fade-up" data-aos-delay="300">
-    <div class="accordion-container">
-
-      <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80');">
-        <button class="accordion-header">
-          <span class="job-title">Data Scientist</span>
-          <span class="arrow">&#x2795;</span>
-        </button>
-        <div class="accordion-content">
-          <p>Le Data Scientist est un expert qui développe des modèles d’apprentissage automatique dans son entreprise. Il possède un haut niveau de mathématiques, des compétences en développement informatique, une connaissance des infrastructures Big Data et une parfaite compréhension business.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80');">
-        <button class="accordion-header">
-          <span class="job-title">Scrum Master BI</span>
-          <span class="arrow">&#x2795;</span>
-        </button>
-        <div class="accordion-content">
-          <p>Gestion de projets agiles en Intelligence Artificielle. Compétences en infrastructure Big Data et création de modèles Machine Learning. Respect des délais et budgets.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80');">
-        <button class="accordion-header">
-          <span class="job-title">Machine Learning Developer</span>
-          <span class="arrow">&#x2795;</span>
-        </button>
-        <div class="accordion-content">
-          <p>Maintien des performances des modèles ML/DL. Garant de la disponibilité des modèles. Rôle clé dans la chaîne de traitement des données.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item" style="background-image: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=600&q=80');">
-        <button class="accordion-header">
-          <span class="job-title">AI Developer</span>
-          <span class="arrow">&#x2795;</span>
-        </button>
-        <div class="accordion-content">
-          <p>Intervention dans finance, santé, marketing, etc. Création de programmes d’apprentissage machine et gestion de données volumineuses.</p>
-        </div>
-      </div>
-
+    <div class="quote-wrapper">
+      <img src="image/quote1.png" alt="Sticker gauche" class="sticker left" />
+      <blockquote class="quote">
+        Personne n’est trop vieux pour se fixer un nouvel objectif ou réaliser de nouveaux rêves.
+        <span class="quote-author">— Les Brown</span>
+      </blockquote>
+      <img src="image//quote.png" alt="Sticker droit" class="sticker right" />
     </div>
-  </div>
-</section>
+  </section>
 
 
-
-
-<section id="trusted-clients" class="trusted-section">
-  <h2>Ils nous ont fait confiance</h2>
-  <div class="clients-wrapper">
-    <div class="client-logo">
-      <img src="image/orange.png" alt="Orange Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/bh.png" alt="Banque Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/esprit.png" alt="ESPRIT Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/bna.png" alt="BNA BANK Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/huawi.png" alt="HUWAWEI Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/stb.jpeg" alt="STB BANK Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/hamila.png" alt="Groupe Hamila Formation BI" />
-    </div>
-    <div class="client-logo">
-      <img src="image/tls.png" alt="TLS Formation BI" />
-    </div>
-  </div>
-</section>
-
-
-<section class="inspiration-quote" data-aos="zoom-in">
-  <div class="quote-glow">
-    <i class="fas fa-quote-left"></i>
-    <div class="quote-nancy-quote">
+  <section class="inspiration-quote" data-aos="zoom-in">
+    <div class="quote-glow">
+      <i class="fas fa-quote-left"></i>
+      <div class="quote-nancy-quote">
         <h4>Personne n’est trop vieux pour se fixer un nouvel objectif ou réaliser de nouveaux rêves.</h4>
       </div>
-    <span class="quote-author">— Les Brown</span>
-  </div>
-</section>
+      <span class="quote-author">— Les Brown</span>
+    </div>
+  </section>
+
+
+
 
 
   
   <section id="contact" class="section-contact">
-  <div class="contact-container" data-aos="zoom-in">
-    <h2 class="contact-title">Restons en contact</h2>
-    <p class="contact-subtitle">Besoin d'information ? Une question sur nos formations ? Écrivez-nous !</p>
+    <div class="contact-container" data-aos="zoom-in">
+      <h2 class="contact-title">Restons en contact</h2>
+      <p class="contact-subtitle">Besoin d'information ? Une question sur nos formations ? Écrivez-nous !</p>
     
-    <form class="contact-form-glass">
-      <div class="input-group">
-        <input type="text" name="name" required>
-        <label>Nom complet</label>
-      </div>
-      <div class="input-group">
-        <input type="email" name="email" required>
-        <label>Email</label>
-      </div>
-      <div class="input-group">
-        <textarea rows="4" name="message" required></textarea>
-        <label>Votre message</label>
-      </div>
-      <button type="submit">Envoyer </button>
-    </form>
-  </div>
-</section>
+      <form class="contact-form-glass">
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Nom complet</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <textarea rows="4" name="message" required></textarea>
+          <label>Votre message</label>
+        </div>
+        <button type="submit">Envoyer </button>
+      </form>
+    </div>
+  </section>
 
 
   <footer id="contact">
@@ -437,175 +351,15 @@
     </p>
     <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
   </footer>
+
+
   <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<!-- En bas du body, avant </body>, ajoute ce script -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 
-<script src="js/script.js"></script>
-
-<script>
-    particlesJS('particles-js', 
-  {
-    "particles": {
-      "number": {
-        "value": 50,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "circle"
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false
-      },
-      "size": {
-        "value": 3,
-        "random": true
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.3,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 2,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out"
-      }
-
-
-      s
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        }
-      },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 0.7
-          }
-        },
-        "push": {
-          "particles_nb": 4
-        }
-      }
-    },
-    "retina_detect": true
-  }
-);
-
-  AOS.init({
-    once: true,
-    duration: 1000,
-    easing: 'ease-in-out'
-  });
-
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    particlesJS('particles-js', 
-  {
-    "particles": {
-      "number": {
-        "value": 50,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "circle"
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false
-      },
-      "size": {
-        "value": 3,
-        "random": true
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.3,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 2,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out"
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        }
-      },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 0.7
-          }
-        },
-        "push": {
-          "particles_nb": 4
-        }
-      }
-    },
-    "retina_detect": true
-  });
-
-
-
-
-</script>
-
+  <script src="js/script.js"></script>
 
 
 
@@ -641,6 +395,9 @@
 });
 
   </script>
+<script>
+ 
+</script>
 
 
 </body>
