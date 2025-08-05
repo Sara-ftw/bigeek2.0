@@ -239,6 +239,15 @@
     </div>
   </section>
 
+  <section class="section-transition" aria-hidden="true">
+    <div class="transition-container">
+      <div class="line"></div>
+      <h2 class="transition-text" data-aos="fade-up">Vers l'excellence...</h2>
+      <div class="line"></div>
+    </div>
+</section>
+ 
+
   <section id="trusted-clients" class="trusted-section">
     <h2>Ils nous ont fait confiance</h2>
 
@@ -263,34 +272,31 @@
   </section>
 
 
-  <section id="stats-quote" class="section-bg">
-    <div class="stats-container">
-      <div class="stat-item">
-        <h3>+ de 15 000</h3>
+  <section id="stats-quote" class="section-bg vibrant-stats" data-aos="fade-up">
+    <div class="stats-container-glow">
+      <div class="stat-item-glow" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-graduation-cap"></i>
+        <h3><span class="count" data-target="15000">0</span>+</h3>
         <p>Étudiants diplômés</p>
       </div>
-      <div class="stat-item">
-        <h3>+ de 800</h3>
-        <p>Entreprises partenaires internationales</p>
+      <div class="stat-item-glow" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-building"></i>
+        <h3><span class="count" data-target="800">0</span>+</h3>
+        <p>Partenaires internationaux</p>
       </div>
-      <div class="stat-item">
-        <h3>96%</h3>
+      <div class="stat-item-glow" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-smile-beam"></i>
+        <h3><span class="count" data-target="96">0</span>%</h3>
         <p>Satisfaction moyenne</p>
+
+        <!-- Barre animée -->
+        <div class="progress-bar">
+          <div class="fill" style="width: 0%;" data-width="96"></div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="quote-wrapper">
-      <img src="image/quote1.png" alt="Sticker gauche" class="sticker left" />
-      <blockquote class="quote">
-        Personne n’est trop vieux pour se fixer un nouvel objectif ou réaliser de nouveaux rêves.
-        <span class="quote-author">— Les Brown</span>
-      </blockquote>
-      <img src="image//quote.png" alt="Sticker droit" class="sticker right" />
-    </div>
-  </section>
-
-
-  <section class="inspiration-quote" data-aos="zoom-in">
+    </section>
+    <section class="inspiration-quote" data-aos="zoom-in">
     <div class="quote-glow">
       <i class="fas fa-quote-left"></i>
       <div class="quote-nancy-quote">
@@ -298,7 +304,12 @@
       </div>
       <span class="quote-author">— Les Brown</span>
     </div>
+    </section> 
   </section>
+
+
+
+  
 
   <section id="contact" class="section-contact">
     <div class="contact-container" data-aos="zoom-in">
@@ -333,7 +344,10 @@
     </p>
     <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
   </footer>
-
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scrollToTop">
+  <i class="fa fa-arrow-up"></i>
+</button>
 
 
   
@@ -509,32 +523,105 @@
 
 
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll('.count');
+    const fill = document.querySelector('.progress-bar .fill');
+    let hasAnimated = false;
+
+    function animateCounters() {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+
+      // Progress bar animation
+      const width = fill.getAttribute('data-width');
+      fill.style.width = width + '%';
+    }
+
+    // Intersection Observer pour détecter si visible
+    const section = document.querySelector('#stats-quote');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(section);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(section);
+  });
+</script>
 
   <script>
-   document.querySelectorAll('.accordion-header').forEach(header => {
+document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', () => {
     const item = header.parentElement;
     const content = header.nextElementSibling;
 
+    if (!content) return; // 🛡 protection anti-erreur
+
     if (item.classList.contains('active')) {
       content.style.maxHeight = null;
       item.classList.remove('active');
-      header.querySelector('.arrow').innerHTML = '&#x2795;'; // +
+      header.querySelector('.arrow').innerHTML = '&#x2795;';
     } else {
       document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
-        activeItem.querySelector('.accordion-content').style.maxHeight = null;
+        const activeContent = activeItem.querySelector('.accordion-content');
+        if (activeContent) activeContent.style.maxHeight = null;
         activeItem.classList.remove('active');
-        activeItem.querySelector('.arrow').innerHTML = '&#x2795;'; // +
+        const arrow = activeItem.querySelector('.arrow');
+        if (arrow) arrow.innerHTML = '&#x2795;';
       });
 
-      content.style.maxHeight = content.scrollHeight + 20 + "px"; // ajout 20px
+      content.style.maxHeight = content.scrollHeight + 20 + "px";
       item.classList.add('active');
-      header.querySelector('.arrow').innerHTML = '&#x2796;'; // -
+      const arrow = header.querySelector('.arrow');
+      if (arrow) arrow.innerHTML = '&#x2796;';
     }
   });
 });
 
+
   </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabSlides = document.querySelectorAll('.tab-slide');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const index = Number(button.getAttribute('data-index'));
+
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabSlides.forEach(slide => slide.classList.remove('active'));
+
+      button.classList.add('active');
+      tabSlides[index].classList.add('active');
+    });
+  });
+});
+
+</script>
+
+
 
 </body>
 </html>

@@ -34,6 +34,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
+    <style>
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #000;
+}
+
+
+    </style>
 </head>
 <body>
     <header class="scrolled">
@@ -59,6 +72,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+<div id="particles-js"></div>
     <div class="login-glass-container">
         <div class="login-glass-box" data-aos="zoom-in">
             <h2><i class="fas fa-user-circle"></i> Connexion</h2>
@@ -73,11 +87,12 @@
                 </div>
                 <button type="submit">Se connecter</button>
                 <div class="login-links">
-                    <a href="#">Mot de passe oublié ?</a> | <a href="inscription.html">Créer un compte</a>
+                    <a href="mdp.html">Mot de passe oublié ?</a> | <a href="inscription.html">Créer un compte</a>
                 </div>
             </form>
         </div>
     </div>
+</div>
 
 
 
@@ -99,9 +114,6 @@
     <!-- JS AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
     <!-- Ton script.js si tu en as un -->
     <script src="js/script.js"></script>
 
@@ -112,11 +124,48 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- AOS Library for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init();
     </script>
+ <div id="particles-js"></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80 },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            out_mode: "out",
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.7 } },
+            push: { particles_nb: 4 },
+          },
+        },
+        retina_detect: true,
+      });
+    });
+  </script>
 </body>
 </html>

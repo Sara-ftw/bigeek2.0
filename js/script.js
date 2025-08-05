@@ -265,3 +265,22 @@ document.getElementById('contactPopup').style.display = 'block';
     });
 
 
+// Récupération du bouton
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+// Quand on scrolle dans la page
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+// Quand on clique sur le bouton
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
