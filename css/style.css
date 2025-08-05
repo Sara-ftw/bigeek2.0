@@ -1791,45 +1791,6 @@ footer a {
     visibility: visible;
 }
 
-#contact {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    background-color: #300e47;  /* adapte à ton footer */
-    color: #fff;
-    flex-wrap: wrap;
-}
-
-.footer-left form {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-left input[type="email"] {
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: none;
-}
-
-.footer-left button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff0066;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.footer-left button:hover {
-    transform: scale(1.05);
-}
-
-.footer-right p, .footer-right a{
-    margin: 3px 0;
-    color: #fff;
-}
 
 /*************inscription*********/
 .register-container {
