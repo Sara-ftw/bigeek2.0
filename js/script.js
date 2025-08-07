@@ -306,3 +306,69 @@ scrollBtn.addEventListener("click", () => {
     });
   });
 
+  const searchInput = document.getElementById('searchInput');
+  const cards = Array.from(document.querySelectorAll('.projet-card'));
+  const projetsGrid = document.querySelector('.projets-grid');
+  const pagination = document.getElementById('pagination');
+
+  const itemsPerPage = 4;
+  let currentPage = 1;
+  let filteredCards = [...cards];
+
+  function displayCards() {
+    projetsGrid.innerHTML = '';
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const cardsToShow = filteredCards.slice(start, end);
+    cardsToShow.forEach(card => projetsGrid.appendChild(card));
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const pageCount = Math.ceil(filteredCards.length / itemsPerPage);
+    pagination.innerHTML = '';
+    for (let i = 1; i <= pageCount; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = (i === currentPage) ? 'active' : '';
+      btn.onclick = () => {
+        currentPage = i;
+        displayCards();
+      };
+      pagination.appendChild(btn);
+    }
+  }
+
+  searchInput.addEventListener('keyup', () => {
+    const query = searchInput.value.toLowerCase();
+    filteredCards = cards.filter(card =>
+      card.textContent.toLowerCase().includes(query)
+    );
+    currentPage = 1;
+    displayCards();
+  });
+
+  // Initial display
+  displayCards();
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("contactToggle");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.getElementById("close-contact");
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
