@@ -24,6 +24,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
 
+  <!-- head -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
 <!-- Google Fonts import -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
@@ -248,28 +252,30 @@
 </section>
  
 
-  <section id="trusted-clients" class="trusted-section">
-    <h2>Ils nous ont fait confiance</h2>
+  <section id="trusted-clients" class="trusted-section" data-aos="fade-up">
+  <h2 data-aos="fade-up" data-aos-delay="100">Ils nous ont fait confiance</h2>
 
-    <div class="logo-slider-container">
-      <button id="prevBtn">←</button>
+  <div class="logo-slider-container" data-aos="fade-up" data-aos-delay="200">
+    <button id="prevBtn" aria-label="Précédent">⟨</button>
 
-      <div class="logo-viewport">
-        <div class="logo-slider" id="logoSlider">
-          <div class="client-logo"><img src="image/orange.png" alt="Orange" /></div>
-          <div class="client-logo"><img src="image/bh.png" alt="BH" /></div>
-          <div class="client-logo"><img src="image/esprit.png" alt="Esprit" /></div>
-          <div class="client-logo"><img src="image/bna.png" alt="BNA" /></div>
-          <div class="client-logo"><img src="image/huawi.png" alt="Huawei" /></div>
-          <div class="client-logo"><img src="image/stb.jpeg" alt="STB" /></div>
-          <div class="client-logo"><img src="image/hamila.png" alt="Hamila" /></div>
-          <div class="client-logo"><img src="image/tls.png" alt="TLS" /></div>
-        </div>
+    <div class="logo-viewport">
+      <div class="logo-slider" id="logoSlider">
+        <!-- Logos normaux -->
+        <div class="client-logo"><img src="image/orange.png" alt="Orange" /></div>
+        <div class="client-logo"><img src="image/bh.png" alt="BH" /></div>
+        <div class="client-logo"><img src="image/esprit.png" alt="Esprit" /></div>
+        <div class="client-logo"><img src="image/bna.png" alt="BNA" /></div>
+        <div class="client-logo"><img src="image/huawi.png" alt="Huawei" /></div>
+        <div class="client-logo"><img src="image/stb.jpeg" alt="STB" /></div>
+        <div class="client-logo"><img src="image/hamila.png" alt="Hamila" /></div>
+        <div class="client-logo"><img src="image/tls.png" alt="TLS" /></div>
       </div>
-
-      <button id="nextBtn">→</button>
     </div>
-  </section>
+
+    <button id="nextBtn" aria-label="Suivant">⟩</button>
+  </div>
+</section>
+
 
 
   <section id="stats-quote" class="section-bg vibrant-stats" data-aos="fade-up">
@@ -346,9 +352,8 @@
   </footer>
   <!-- Scroll to Top Button -->
   <button id="scrollToTopBtn" class="scrollToTop">
-  <i class="fa fa-arrow-up"></i>
-</button>
-
+    ↑
+  </button>
 
   
   <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
@@ -621,6 +626,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion-item');
+
+    accordions.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        // Fermer tous les autres
+        accordions.forEach(acc => {
+          if (acc !== item) {
+            acc.classList.remove('active');
+          }
+        });
+
+        // Toggle l'item cliqué
+        item.classList.toggle('active');
+      });
+    });
+  });
+
+</script>
+<script>
+  const slider = document.getElementById("logoSlider");
+  const logos = document.querySelectorAll(".client-logo");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  const logoWidth = 200; // largeur + marges
+  const visibleCount = 4;
+  let currentPosition = 0;
+  const maxPosition = logos.length - visibleCount;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentPosition * logoWidth}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentPosition < maxPosition) {
+      currentPosition++;
+    } else {
+      currentPosition = 0; // reset au début
+    }
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentPosition > 0) {
+      currentPosition--;
+    } else {
+      currentPosition = maxPosition; // aller à la fin
+    }
+    updateSlider();
+  });
+
+  // Animation auto
+  setInterval(() => {
+    nextBtn.click();
+  }, 4000);
+</script>
 
 
 </body>

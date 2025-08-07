@@ -284,3 +284,25 @@ scrollBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion-item');
+
+    accordions.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        // Fermer tous les autres
+        accordions.forEach(acc => {
+          if (acc !== item) {
+            acc.classList.remove('active');
+          }
+        });
+
+        // Toggle l'item cliqué
+        item.classList.toggle('active');
+      });
+    });
+  });
+

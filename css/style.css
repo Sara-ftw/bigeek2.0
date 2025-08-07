@@ -1076,10 +1076,11 @@ footer {
   }
 
   .client-logo:hover {
-    filter: none;
-    transform: scale(1.15);
-    box-shadow: 0 12px 35px rgba(123, 47, 247, 0.4);
-  }
+  filter: none;
+  transform: scale(1.2) rotate(1deg);
+  box-shadow: 0 15px 45px rgba(123, 47, 247, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
   /* Responsive */
   @media (max-width: 768px) {
@@ -1095,28 +1096,19 @@ footer {
     }
   }
 
-.clients-logos {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 2rem;
-  padding-bottom: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: #7b2ff7 transparent;
+  @keyframes pulse-logo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
-.clients-logos::-webkit-scrollbar {
-  height: 6px;
+.client-logo {
+  animation: pulse-logo 6s ease-in-out infinite;
 }
 
-.clients-logos::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.clients-logos::-webkit-scrollbar-thumb {
-  background-color: #7b2ff7;
-  border-radius: 3px;
-}
 
 
 
@@ -1160,14 +1152,17 @@ footer {
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 2rem;
-  padding: 1rem 0;
+  padding-bottom: 1rem;
   scrollbar-width: thin;
   scrollbar-color: #7b2ff7 transparent;
-  justify-content: flex-start;
 }
 
 .clients-logos::-webkit-scrollbar {
   height: 6px;
+}
+
+.clients-logos::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .clients-logos::-webkit-scrollbar-thumb {
@@ -1184,13 +1179,14 @@ footer {
 }
 
 .logo-viewport {
-  width: 740px; /* 4 logos * (180px + 2*10px margin) */
+  width: 800px;
   overflow: hidden;
 }
 
 .logo-slider {
   display: flex;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
 }
 
 .client-logo {
@@ -1203,28 +1199,31 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.4s ease;
 }
 
-.client-logo img {
-  max-width: 100px;
-  object-fit: contain;
+.client-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(123, 47, 247, 0.2);
 }
 
-#prevBtn,
-#nextBtn {
-  background-color: var(--main-purple);
+
+#prevBtn, #nextBtn {
+  background: #7b2ff7;
   color: white;
   border: none;
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem 1rem;
+  font-size: 2rem;
   border-radius: 10px;
-  font-size: 1.5rem;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-#prevBtn:hover,
-#nextBtn:hover {
-  background-color: var(--mauve-dark);
+#prevBtn:hover, #nextBtn:hover {
+  background: #5e21b5;
+  transform: scale(1.15);
 }
+
 /*******************/
 
 
@@ -1661,6 +1660,49 @@ footer a {
 
 
 /*************connecterrrrrrrrrrr*********/
+.social-login-circles {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-login-circles p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.circle-icon:hover {
+  transform: scale(1.1);
+}
+
+.circle-icon.fb {
+  background-color: #3b5998;
+}
+
+.circle-icon.google {
+  background-color: #db4437;
+}
+
 .login-glass-container {
   display: flex;
   justify-content: center;
@@ -1674,13 +1716,39 @@ footer a {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
   border-radius: 20px;
-  padding: 40px 30px;
+  padding: 50px 50px;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px; /* 🟪 Agrandit la zone */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   color: white;
-  text-align: center;
+  text-align: left; /* 🟩 Alignement texte à gauche comme dans l'image */
   animation: fadeInUp 1s ease;
+}
+
+.login-glass-box h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* 🟪 Plus grand */
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #ffcb74;
+  text-align: left;
+}
+
+.input-icon {
+  position: relative;
+  margin-bottom: 35px; /* 🟪 Plus d'espacement */
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 18px 18px 18px 50px; /* 🟪 Plus grand */
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .login-glass-box h2 {
@@ -1756,6 +1824,15 @@ footer a {
 .login-links a:hover {
   text-decoration: underline;
 }
+.login-glass-box button:nth-of-type(2) {
+  background-color: #af8656;
+  color: white;
+  margin-top: 10px;
+}
+
+.login-glass-box button:nth-of-type(2):hover {
+  background-color: #966b3d;
+}
 
 @keyframes fadeInUp {
   from {
@@ -1767,6 +1844,7 @@ footer a {
     transform: translateY(0);
   }
 }
+
 /*********************** Scroll to Top Button ***********************/
 .scrollToTop {
     position: fixed;

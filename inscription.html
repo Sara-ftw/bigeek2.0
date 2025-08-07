@@ -33,7 +33,102 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<style>
+  /* Popup Container */
+  .contact-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 2rem 2.5rem;
+    width: 320px;
+    max-width: 90vw;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(123, 47, 247, 0.3);
+    font-family: 'Poppins', sans-serif;
+    color: #4b3a89;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+  }
 
+  /* Popup visible */
+  .contact-popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Close Button */
+  .contact-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #7b2ff7;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .contact-popup .close-btn:hover {
+    color: #a87ff9;
+  }
+
+  /* Title */
+  .contact-popup h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    color: #7b2ff7;
+  }
+
+  /* Contact Info */
+  .contact-popup p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* Icon styles */
+  .contact-popup p i {
+    color: #7b2ff7;
+    font-size: 1.2rem;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  /* Social Links */
+  .contact-popup .social-links {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-popup .social-links a {
+    margin: 0 0.7rem;
+    color: #7b2ff7;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+  }
+
+  .contact-popup .social-links a:hover {
+    color: #a87ff9;
+  }
+
+  /* Responsive */
+  @media (max-width: 400px) {
+    .contact-popup {
+      width: 90vw;
+      padding: 1.5rem 1.8rem;
+    }
+  }
+</style>
 </head>
 <body>
     <header class="scrolled">
