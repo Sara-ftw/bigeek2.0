@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - BI-Geek</title>
+
+   <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="prog-page">
+
+  <!-- Reuse existing header -->
+  <header id="header"> 
+    <div class="logo">
+      <img src="image/logo.avif" alt="Logo BI-Geek">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Programmes.html">Programmes</a></li>
+        <li><a href="formation.html" class="active">Formations</a></li>
+        <li><a href="Projet.html">Projets</a></li>
+        <li><a href="propos.html">A propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
+      <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
+    </div>
+  </header>
+
+  <!-- Newsletter / Hero blog section -->
+  <section class="blog-hero-section position-relative text-white">
+  <div class="blog-hero-overlay"></div>
+  <div class="container py-5 position-relative" style="z-index: 2;">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="fw-bold text-purple mb-4" style="font-size: 2.8rem;">Into the Wild</h1>
+        <p class="mb-4 text-muted">
+          Des connaissances techniques et des conseils de carrière gratuits pour vous aider à décrocher l'emploi de vos rêves ! Abonnez-vous pour recevoir les histoires les plus récentes directement dans votre boîte de réception.
+        </p>
+        <form class="d-flex">
+          <input type="email" placeholder="Bonjour@email.com" class="form-control me-2 rounded-pill px-4">
+          <button type="submit" class="btn btn-purple rounded-pill px-4">S’abonner</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Articles Section -->
+  <section class="container my-5">
+    <h1 class="text-center fw-bold glowing-title mb-5">Recommandé pour vous</h1>
+    <div class="row gy-4">
+
+  <!-- Blog Post Card -->
+  <div class="col-12">
+    <div class="d-flex flex-row shadow rounded-4 overflow-hidden blog-box">
+      
+      <!-- Left Image -->
+      <div class="blog-img">
+        <img src="image/article1.jpg" alt="Article Image" class="img-fluid h-100 w-100 object-fit-cover">
+      </div>
+
+      <!-- Right Content -->
+      <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+        <div>
+          <h5 class="fw-bold text-purple">Titre de l’article</h5>
+          <p class="text-muted mb-3">Un aperçu des tendances actuelles de l'industrie BI et comment les maîtriser.</p>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <div class="text-muted small">
+            <i class="fas fa-user"></i> Nom d'utilisateur &nbsp;&nbsp;•&nbsp;&nbsp; 
+            <i class="fas fa-clock"></i> Il y a 2 jours
+          </div>
+          <div class="text-muted small">
+            <i class="fas fa-heart"></i> 123 &nbsp;&nbsp; 
+            <i class="fas fa-comment"></i> 12
+          </div>
+          <a href="#" class="btn btn-outline-purple btn-sm rounded-pill mt-2 mt-md-0">Lire l'article</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Duplicate this col-12 block for more articles -->
+  
+</div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Restons en contact</h2>
+      <p class="contact-subtitle">Besoin d'information ? Une question sur nos formations ? Écrivez-nous !</p>
+      <form class="contact-form-glass">
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Nom complet</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <textarea rows="4" name="message" required></textarea>
+          <label>Votre message</label>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact : contact@bi-geek.net</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a>
+    </p>
+    <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+  </footer>
+
+  <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
+    📞
+  </div>
+
+</body>
+</html>
