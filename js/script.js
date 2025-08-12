@@ -1,47 +1,4 @@
 
- document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.parentElement;
-    const content = header.nextElementSibling;
-
-    if (item.classList.contains('active')) {
-      content.style.maxHeight = null;
-      item.classList.remove('active');
-      header.querySelector('.arrow').innerHTML = '&#x2795;'; // +
-    } else {
-      document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
-        activeItem.querySelector('.accordion-content').style.maxHeight = null;
-        activeItem.classList.remove('active');
-        activeItem.querySelector('.arrow').innerHTML = '&#x2795;'; // +
-      });
-
-      content.style.maxHeight = content.scrollHeight + 20 + "px"; // ajout 20px
-      item.classList.add('active');
-      header.querySelector('.arrow').innerHTML = '&#x2796;'; // -
-    }
-  });
-});
-  document.addEventListener('DOMContentLoaded', function () {
-    const accordions = document.querySelectorAll('.accordion-item');
-
-    accordions.forEach(item => {
-      const header = item.querySelector('.accordion-header');
-
-      header.addEventListener('click', () => {
-        // Fermer tous les autres
-        accordions.forEach(acc => {
-          if (acc !== item) {
-            acc.classList.remove('active');
-          }
-        });
-
-        // Toggle l'item cliqué
-        item.classList.toggle('active');
-      });
-    });
-  });
-   
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const contactToggle = document.getElementById("contactToggle");
