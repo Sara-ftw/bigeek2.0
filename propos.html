@@ -46,16 +46,28 @@
                 <li><a href="prog.html">Programmes</a></li>
                 <li><a href="formation.html">Formations</a></li>
                 <li><a href="Projet.html" >Projets </a></li>
-                <li><a href="propos.html">A propos</a></li>
+                <li><a href="propos.html" class="active">A propos</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
-            <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
+            <a href="#" id="contactToggle" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
 
+            <div id="contact-popup" class="contact-popup hidden">
+                <div class="contact-popup-content">
+                    <button id="close-contact" class="close-btn">&times;</button>
+                    <h3>Contactez-nous</h3>
+                    <p><strong>Email :</strong> contact@bi-geek.net</p>
+                    <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053.</p>
+                </div>
+            </div>
+
+            <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
         </div>
-  </header>
+    </header>
 
 
     <section id="about-bi-geek" class="about-section">
@@ -101,27 +113,44 @@
 
 
 
-    <section class="section-contact" data-aos="zoom-in">
-
+    <section class="section-contact" data-aos="zoom-in"> 
         <h2 class="contact-title">Restons en contact</h2>
         <p class="contact-subtitle">On vous répond sous 24h !</p>
 
         <div class="contact-form-glass">
-            <form>
-              <div class="input-group">
+        <form>
+            <div class="input-group">
                 <input type="text" required>
                 <label>Nom</label>
-              </div>
-              <div class="input-group">
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Adresse</label>
+            </div>
+
+            <div class="input-group">
                 <input type="email" required>
-                <label>Email</label>
-              </div>
-              <div class="input-group">
+                <label>E-mail</label>
+            </div>
+
+            <div class="input-group">
+                <input type="tel" required>
+                <label>Téléphone</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Objet</label>
+            </div>
+
+            <div class="input-group">
                 <textarea required></textarea>
                 <label>Message</label>
-              </div>
-                <button type="submit">Envoyer</button>
-            </form>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
         </div>
     </section>
 
@@ -145,8 +174,11 @@
         </p>
         <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
     </div>
-</footer>
+    </footer>
 
+    <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
+        📞 
+    </div>
     <!-- CSS AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -159,23 +191,33 @@
     <!-- Ton script.js si tu en as un -->
     <script src="js/script.js"></script>
 
-
-
-
-
-    <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
-        📞 
-    </div>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<script>
-  AOS.init({
-    duration: 800,
-    once: true
-  });
-</script>
+    <script>
+        AOS.init();
+    </script>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("contactToggle");
+        const popup = document.getElementById("contact-popup");
+        const closeBtn = document.getElementById("close-contact");
+
+        toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.classList.toggle("hidden");
+        });
+
+     closeBtn.addEventListener("click", function () {
+          popup.classList.add("hidden");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+            popup.classList.add("hidden");
+          }
+        });
+    });
+    </script>
 </body>
 </html>

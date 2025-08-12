@@ -33,6 +33,9 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+     <!-- CSS AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
 <style>
   /* Popup Container */
   .contact-popup {
@@ -146,17 +149,25 @@
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="#" id="contactToggle" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+            <div id="contact-popup" class="contact-popup hidden">
+                <div class="contact-popup-content">
+                    <button id="close-contact" class="close-btn">&times;</button>
+                    <h3>Contactez-nous</h3>
+                    <p><strong>Email :</strong> contact@bi-geek.net</p>
+                    <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053.</p>
+                </div>
+            </div>
+
             <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
         </div>
     </header>
 
-  <div class="contact-popup" id="contactPopup">
-    <span class="close-btn" id="closeContactPopup">&times;</span>
-    <h3>Contactez-nous</h3>
-    <p>Email : contact@bi-geek.net</p>
-    <p>Téléphone : +216 12 345 678</p>
-  </div>
+  
 
   <div class="register-container">
     <h2><i class="fas fa-user-plus"></i> Créer un compte</h2>
@@ -225,13 +236,22 @@
 
 
   <footer id="contact">
-      <p>Contact : contact@bi-geek.net</p>
-      <p>
-        <a href="#">Facebook</a> |
-        <a href="#">LinkedIn</a> |
-        <a href="#">Instagram</a>
-      </p>
-      <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+    <div class="footer-left">
+        <form>
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <div class="footer-right">
+        <p>Contact : contact@bi-geek.net</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">Instagram</a>
+        </p>
+        <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+    </div>
   </footer>
 
 
@@ -241,32 +261,33 @@
     
 
 
-
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const contactIcon = document.querySelector('.contact-icon');
-        const contactPopup = document.getElementById('contactPopup');
-        const closeBtn = document.getElementById('closeContactPopup');
-
-        contactIcon.addEventListener('click', function(e) {
-        e.preventDefault();
-        contactPopup.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', function() {
-        contactPopup.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(e) {
-        if (e.target === contactPopup) {
-            contactPopup.style.display = 'none';
-        }
-        });
-    });
+        AOS.init();
     </script>
-    <!-- CSS AOS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
+   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("contactToggle");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.getElementById("close-contact");
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
+   
     <!-- JS AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -277,7 +298,7 @@
     <script src="js/script.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script> AOS.init(); </script>
+    
 
 
 

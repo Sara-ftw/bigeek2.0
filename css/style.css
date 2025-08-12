@@ -101,6 +101,11 @@ nav a {
   font-weight: 500;
   transition: color var(--transition-speed) ease;
   }
+nav ul li a.active {
+    color: #7d3372; /* texte orange */
+    font-weight: bold; /* gras */
+    border-bottom: 2px solid #83247c; /* souligné */
+}
 
 .auth-buttons {
   display: flex;
@@ -370,12 +375,64 @@ body.prog-page .contact-icon {
 }
 
 footer {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
   background-color: #1e003e;
   color: white;
+   backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   text-align: center;
   padding: 40px 20px;
+  
+}
+footer .footer-left form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+footer .footer-left input[type="email"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+}
+
+footer .footer-left input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer .footer-left button {
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(135deg, #7f5fff, #6c63ff);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+footer .footer-left button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #a489ff, #7f5fff);
+}
+
+footer .footer-right {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
    
 
 .modern-btn {
@@ -1472,7 +1529,6 @@ vibrant-stats {
   position: relative;
   margin-bottom: 30px;
 }
-
 .input-group input,
 .input-group textarea {
   width: 100%;
@@ -1483,6 +1539,11 @@ vibrant-stats {
   color: #fff;
   font-size: 1rem;
   outline: none;
+  resize: none; /* empêche le redimensionnement du textarea */
+}
+
+.input-group textarea {
+  height: 120px; /* taille du champ message */
 }
 
 .input-group label {
@@ -2312,3 +2373,5 @@ footer a {
   transform: translateY(-50%);
   color: #6d1880;
 }
+
+

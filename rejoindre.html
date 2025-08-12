@@ -34,116 +34,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-    <style>
-
-    .container {
-      margin-top: 80px;
-      max-width: 800px;
-      margin-top: calc(70px + 2rem);
-      padding: 2rem;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
-    }
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hover boutons plus doux avec ombre portée */
-.btn.primary:hover {
-  background: #452166;
-  box-shadow: 0 8px 15px rgba(69, 33, 102, 0.4);
-  transform: translateY(-3px);
-  transition: all 0.3s ease;
-}
-
-.btn.secondary:hover {
-  background: #ccc;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  transform: translateY(-3px);
-  transition: all 0.3s ease;
-}
-
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      color: #5a2d82; /* violet BI-Geek */
-      margin-bottom: 2rem;
-    }
-
-    .step {
-      background: #f3ecfa;
-      border-left: 6px solid #5a2d82;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-    }
-
-    .step h2 {
-      font-size: 1.3rem;
-      margin: 0 0 0.5rem;
-      color: #5a2d82;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .btn {
-      flex: 1;
-      padding: 0.8rem;
-      text-align: center;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn.primary {
-      background: #5a2d82;
-      color: #fff;
-    }
-
-    .btn.primary:hover {
-      background: #452166;
-    }
-
-    .btn.secondary {
-      background: #ddd;
-      color: #333;
-    }
-
-    .btn.secondary:hover {
-      background: #ccc;
-    }
-
-    .summary {
-      background: #f3ecfa;
-      padding: 1rem;
-      border-radius: 10px;
-      border: 1px solid #e1d4f2;
-      margin-top: 2rem;
-    }
-
-    .summary p {
-      margin: 0.3rem 0;
-    }
-
-    .price {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #5a2d82;
-    }
-
-    </style>
+  
 </head>
 <body>
     <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
@@ -163,9 +54,21 @@
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
-            <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
+            <a href="#" id="contactToggle" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
 
+            <div id="contact-popup" class="contact-popup hidden">
+                <div class="contact-popup-content">
+                    <button id="close-contact" class="close-btn">&times;</button>
+                    <h3>Contactez-nous</h3>
+                    <p><strong>Email :</strong> contact@bi-geek.net</p>
+                    <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053.</p>
+                </div>
+            </div>
+
+            <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
         </div>
   </header>
 <div class="container" id="programme-container">
@@ -211,37 +114,7 @@
 
 <!-- Reste de ta page, contact, footer, scripts... -->
 
-<script>
-  document.getElementById('btn-inscrire').addEventListener('click', function() {
-    // Cacher la partie non connecté
-    document.getElementById('not-logged-in').style.display = 'none';
-    // Afficher la partie connecté
-    document.getElementById('logged-in').style.display = 'block';
-    // Mettre en opacité 1 les détails paiement
-    document.getElementById('payment-details').style.opacity = '1';
-});
 
-  // Simule l'état connecté : true = connecté, false = non connecté
-  const isLoggedIn = false;  // <-- change ici pour tester
-
-  window.onload = function() {
-    const notLoggedInDiv = document.getElementById('not-logged-in');
-    const loggedInDiv = document.getElementById('logged-in');
-    const paymentDetailsDiv = document.getElementById('payment-details');
-
-    if (isLoggedIn) {
-      // Utilisateur connecté : cacher inscription/connexion, activer paiement
-      notLoggedInDiv.style.display = 'none';
-      loggedInDiv.style.display = 'block';
-      paymentDetailsDiv.style.opacity = '1';
-    } else {
-      // Utilisateur non connecté : montrer inscription/connexion, paiement grisé
-      notLoggedInDiv.style.display = 'block';
-      loggedInDiv.style.display = 'none';
-      paymentDetailsDiv.style.opacity = '0.6';
-    }
-  };
-</script>
 
     <section class="section-contact" data-aos="zoom-in">
 
@@ -287,7 +160,7 @@
         </p>
         <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
     </div>
-</footer>
+    </footer>
 
     <!-- CSS AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
@@ -311,13 +184,64 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  document.getElementById('btn-inscrire').addEventListener('click', function() {
+    // Cacher la partie non connecté
+    document.getElementById('not-logged-in').style.display = 'none';
+    // Afficher la partie connecté
+    document.getElementById('logged-in').style.display = 'block';
+    // Mettre en opacité 1 les détails paiement
+    document.getElementById('payment-details').style.opacity = '1';
+});
 
+  // Simule l'état connecté : true = connecté, false = non connecté
+  const isLoggedIn = false;  // <-- change ici pour tester
+
+  window.onload = function() {
+    const notLoggedInDiv = document.getElementById('not-logged-in');
+    const loggedInDiv = document.getElementById('logged-in');
+    const paymentDetailsDiv = document.getElementById('payment-details');
+
+    if (isLoggedIn) {
+      // Utilisateur connecté : cacher inscription/connexion, activer paiement
+      notLoggedInDiv.style.display = 'none';
+      loggedInDiv.style.display = 'block';
+      paymentDetailsDiv.style.opacity = '1';
+    } else {
+      // Utilisateur non connecté : montrer inscription/connexion, paiement grisé
+      notLoggedInDiv.style.display = 'block';
+      loggedInDiv.style.display = 'none';
+      paymentDetailsDiv.style.opacity = '0.6';
+    }
+  };
+</script>
 <script>
   AOS.init({
     duration: 800,
     once: true
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("contactToggle");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.getElementById("close-contact");
 
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BI-Geek - Accueil</title>
@@ -34,8 +34,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-</head>
-<body>
+  </head>
+  <body>
     <header class="scrolled">
         <div class="logo">
         <img src="image/logo.avif" alt="Logo BI-Geek">
@@ -51,44 +51,60 @@
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="#" class="contact-icon"><i class="fas fa-envelope"></i></a>
+            <a href="#" id="contactToggle" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+            <div id="contact-popup" class="contact-popup hidden">
+                <div class="contact-popup-content">
+                    <button id="close-contact" class="close-btn">&times;</button>
+                    <h3>Contactez-nous</h3>
+                    <p><strong>Email :</strong> contact@bi-geek.net</p>
+                    <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053</p>
+                </div>
+            </div>
+
             <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
         </div>
     </header>
 
-<div class="reset-password-container">
-  <h2><i class="fas fa-lock"></i> Mot de passe oublié</h2>
-  <form class="reset-form">
-    <div class="input-icon" style="flex: 1 1 100%;">
-      <i class="fas fa-envelope"></i>
-      <input type="email" placeholder="Entrez votre email" required />
+    <div class="reset-password-container">
+      <h2><i class="fas fa-lock"></i> Mot de passe oublié</h2>
+      <form class="reset-form">
+        <div class="input-icon" style="flex: 1 1 100%;">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Entrez votre email" required />
+        </div>
+        <button type="submit" class="btn-submit">Envoyer le lien</button>
+        <a href="connecter.html" class="back-link">← Retour à la connexion</a>
+      </form>
     </div>
-    <button type="submit" class="btn-submit">Envoyer le lien</button>
-    <a href="connecter.html" class="back-link">← Retour à la connexion</a>
-  </form>
-</div>
 
 
 
-  <div class="contact-popup" id="contactPopup">
-    <span class="close-btn" id="closeContactPopup">&times;</span>
-    <h3>Contactez-nous</h3>
-    <p>Email : contact@bi-geek.net</p>
-    <p>Téléphone : +216 12 345 678</p>
-  </div>
 
   
 
 
-  <footer id="contact">
-      <p>Contact : contact@bi-geek.net</p>
-      <p>
-        <a href="#">Facebook</a> |
-        <a href="#">LinkedIn</a> |
-        <a href="#">Instagram</a>
-      </p>
-      <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
-  </footer>
+    <footer id="contact">
+    <div class="footer-left">
+        <form>
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <div class="footer-right">
+        <p>Contact : contact@bi-geek.net</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">Instagram</a>
+        </p>
+        <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+    </div>
+    </footer>
 
 
     <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
@@ -98,30 +114,32 @@
 
 
 
-
     <script>
-        
-    document.addEventListener("DOMContentLoaded", function() {
-        const contactIcon = document.querySelector('.contact-icon');
-        const contactPopup = document.getElementById('contactPopup');
-        const closeBtn = document.getElementById('closeContactPopup');
-
-        contactIcon.addEventListener('click', function(e) {
-        e.preventDefault();
-        contactPopup.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', function() {
-        contactPopup.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(e) {
-        if (e.target === contactPopup) {
-            contactPopup.style.display = 'none';
-        }
-        });
-    });
+        AOS.init();
     </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("contactToggle");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.getElementById("close-contact");
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
     <!-- CSS AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
@@ -139,5 +157,5 @@
 
 
 
-</body>
+  </body>
 </html>

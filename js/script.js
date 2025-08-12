@@ -1,5 +1,145 @@
 
-  window.addEventListener('scroll', function() {
+ document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const content = header.nextElementSibling;
+
+    if (item.classList.contains('active')) {
+      content.style.maxHeight = null;
+      item.classList.remove('active');
+      header.querySelector('.arrow').innerHTML = '&#x2795;'; // +
+    } else {
+      document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
+        activeItem.querySelector('.accordion-content').style.maxHeight = null;
+        activeItem.classList.remove('active');
+        activeItem.querySelector('.arrow').innerHTML = '&#x2795;'; // +
+      });
+
+      content.style.maxHeight = content.scrollHeight + 20 + "px"; // ajout 20px
+      item.classList.add('active');
+      header.querySelector('.arrow').innerHTML = '&#x2796;'; // -
+    }
+  });
+});
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion-item');
+
+    accordions.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        // Fermer tous les autres
+        accordions.forEach(acc => {
+          if (acc !== item) {
+            acc.classList.remove('active');
+          }
+        });
+
+        // Toggle l'item cliqué
+        item.classList.toggle('active');
+      });
+    });
+  });
+   
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const contactToggle = document.getElementById("contactToggle");
+    const contactPopup = document.getElementById("contact-popup");
+    const closeContact = document.getElementById("close-contact");
+
+    if (contactToggle && contactPopup && closeContact) {
+        contactToggle.addEventListener("click", function(e) {
+            e.preventDefault();
+            contactPopup.classList.toggle("hidden");
+        });
+
+        closeContact.addEventListener("click", function() {
+            contactPopup.classList.add("hidden");
+        });
+    }
+});
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("contactToggle");
+    const popup = document.getElementById("contact-popup");
+    const closeBtn = document.getElementById("close-contact");
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll('.count');
+    const fill = document.querySelector('.progress-bar .fill');
+    let hasAnimated = false;
+
+    function animateCounters() {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+
+      // Progress bar animation
+      const width = fill.getAttribute('data-width');
+      fill.style.width = width + '%';
+    }
+
+    // Intersection Observer pour détecter si visible
+    const section = document.querySelector('#stats-quote');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.unobserve(section);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(section);
+  });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("nav ul li a");
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
+
+
+window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -53,30 +193,6 @@ tabBtns.forEach(btn => {
       updateSlider();
     }
   });
-
-
-   document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.parentElement;
-    const content = header.nextElementSibling;
-
-    if (item.classList.contains('active')) {
-      content.style.maxHeight = null;
-      item.classList.remove('active');
-      header.querySelector('.arrow').innerHTML = '&#x2795;'; // +
-    } else {
-      document.querySelectorAll('.accordion-item.active').forEach(activeItem => {
-        activeItem.querySelector('.accordion-content').style.maxHeight = null;
-        activeItem.classList.remove('active');
-        activeItem.querySelector('.arrow').innerHTML = '&#x2795;'; // +
-      });
-
-      content.style.maxHeight = content.scrollHeight + 20 + "px"; // ajout 20px
-      item.classList.add('active');
-      header.querySelector('.arrow').innerHTML = '&#x2796;'; // -
-    }
-  });
-});
 
 AOS.init({
   duration: 1000, // durée animation en ms
@@ -286,25 +402,7 @@ scrollBtn.addEventListener("click", () => {
 });
 
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const accordions = document.querySelectorAll('.accordion-item');
 
-    accordions.forEach(item => {
-      const header = item.querySelector('.accordion-header');
-
-      header.addEventListener('click', () => {
-        // Fermer tous les autres
-        accordions.forEach(acc => {
-          if (acc !== item) {
-            acc.classList.remove('active');
-          }
-        });
-
-        // Toggle l'item cliqué
-        item.classList.toggle('active');
-      });
-    });
-  });
 
   const searchInput = document.getElementById('searchInput');
   const cards = Array.from(document.querySelectorAll('.projet-card'));
@@ -372,3 +470,16 @@ scrollBtn.addEventListener("click", () => {
       }
     });
   });
+
+  function filterProjects() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.getElementsByClassName("project-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    let cardText = cards[i].textContent.toLowerCase();
+    cards[i].style.display = cardText.includes(input) ? "block" : "none";
+  }
+}
+
+
+
