@@ -2375,3 +2375,40 @@ footer a {
 }
 
 
+/*************************/
+ .container {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .step {
+      background: #f3ecfa;
+      border-left: 6px solid #5a2d82;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .step h2 {
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem;
+      color: #5a2d82;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    summary p {
+      margin: 0.3rem 0;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #5a2d82;
+    }
