@@ -123,33 +123,47 @@ tabBtns.forEach(btn => {
 });
 
 
- const slider = document.getElementById("logoSlider");
-  const logos = slider.querySelectorAll(".client-logo");
-  const nextBtn = document.getElementById("nextBtn");
-  const prevBtn = document.getElementById("prevBtn");
+const slider = document.getElementById("logoSlider");
+const logos = slider.querySelectorAll(".client-logo");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
-  let currentPosition = 0;
-  const logoWidth = 200; // largeur + marge
-  const visibleCount = 4;
-  const maxPosition = logos.length - visibleCount;
+let currentPosition = 0;
+const logoWidth = 200; // largeur + marge
+const visibleCount = 4;
+const maxPosition = logos.length - visibleCount;
 
-  function updateSlider() {
-    slider.style.transform = `translateX(-${currentPosition * logoWidth}px)`;
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentPosition * logoWidth}px)`;
+}
+
+// Avancer
+function goNext() {
+  if (currentPosition < maxPosition) {
+    currentPosition++;
+  } else {
+    currentPosition = 0; // revenir au début
   }
+  updateSlider();
+}
 
-  nextBtn.addEventListener("click", () => {
-    if (currentPosition < maxPosition) {
-      currentPosition++;
-      updateSlider();
-    }
-  });
+// Reculer
+function goPrev() {
+  if (currentPosition > 0) {
+    currentPosition--;
+  } else {
+    currentPosition = maxPosition; // aller à la fin
+  }
+  updateSlider();
+}
 
-  prevBtn.addEventListener("click", () => {
-    if (currentPosition > 0) {
-      currentPosition--;
-      updateSlider();
-    }
-  });
+// Événements boutons
+nextBtn.addEventListener("click", goNext);
+prevBtn.addEventListener("click", goPrev);
+
+// Défilement automatique toutes les 3s
+setInterval(goNext, 3000);
+
 
 AOS.init({
   duration: 1000, // durée animation en ms
