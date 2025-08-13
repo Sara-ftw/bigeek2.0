@@ -149,16 +149,7 @@ header.scrolled .contact-icon {
   color: var(--hero-color);
 }
 
-/* Header blanc pour toutes les pages sauf index */
-body.page-white-header header {
-  background: var(--white);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
-body.page-white-header header nav a,
-body.page-white-header .contact-icon {
-  color: var(--mauve);
-}
                   /****************/
 
 /****************/
