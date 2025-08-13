@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BI-Geek - Formations</title>
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style1.css">
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/fonts.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="prog-page">
+
+  <!-- Header  -->
+  <header id="header">
+    <div class="logo">
+      <img src="image/logo.avif" alt="Logo BI-Geek">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Programmes.html">Programmes</a></li>
+        <li><a href="formation.html" class="active">Formations</a></li>
+        <li><a href="Projet.html">Projets</a></li>
+        <li><a href="propos.html">A propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
+      <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
+    </div>
+  </header>
+
+  <!--Titles + search bar + boxes -->
+  <main class="container py-5 mt-5">
+  <section class="programmes-hero-section">
+    <div class="d-flex justify-content-between align-items-center mb-5 position-relative" style="z-index: 2;">
+  
+        <div style="width: 250px;"></div> <!-- Empty left to balance the search bar on the right -->
+        <h2 class="text-center m-0 glowing-title"
+        style="font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--mauve);">
+        Nos Programmes
+    </h2>
+    <div class="position-relative" style="width: 250px;">
+        <input type="text" id="searchInput" class="form-control ps-3 pe-5 shadow-sm"
+        placeholder="Recherche..." style="border-radius: 20px; padding: 10px 15px;">
+        <i class="fas fa-search position-absolute"
+        style="right: 15px; top: 50%; transform: translateY(-50%); color: gray;"></i>
+    </div>
+    </div>
+    <h6 class="text-center mb-4" data-aos="fade-up" data-aos-delay="200">Découvrez nos programmes conçus pour enrichir vos compétences et vous guider vers l’excellence.</h6>
+
+    <div class="container programmes-grid">
+      <!-- Repeat this box 6 times -->
+      <div class="programme-box">
+        <img src="image/pmp iso.avif" alt="PMP">
+        <div class="programme-info">
+          <h5>PMP</h5>
+          <p>35 heures • 1500 DT</p>
+          <p class="program-description">
+    Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+  </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+    
+        </div>
+      </div>
+
+      <div class="programme-box">
+        <img src="image/FullStackJs iso.png" alt="Full Stack JS">
+        <div class="programme-info">
+          <h5>Full Stack JS</h5>
+          <p>20 semaines • 2500 DT</p>
+          <p class="program-description">
+            Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+          </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="programme-box">
+        <img src="image/businessAnalytic iso.jpg" alt="Business Analytics">
+        <div class="programme-info">
+          <h5>Business Analytics</h5>
+          <p>23 semaines • 3000 DT</p>
+          <p class="program-description">
+    Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+  </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="programme-box">
+        <img src="image/businessIntelligence iso.jpg" alt="Business Intelligence">
+        <div class="programme-info">
+          <h5>Business Intelligence</h5>
+          <p>4 semaines • 700 DT</p>
+          <p class="program-description">
+    Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+  </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="programme-box">
+        <img src="image/PowerBI iso.png" alt="Power BI">
+        <div class="programme-info">
+          <h5>Power BI</h5>
+          <p>4 semaines • 700 DT</p>
+          <p class="program-description">
+    Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+  </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="programme-box">
+        <img src="image/python iso.png" alt="Python">
+        <div class="programme-info">
+          <h5>Python</h5>
+          <p>4 semaines • 700 DT</p>
+          <p class="program-description">
+    Apprenez à créer des applications web complètes avec JavaScript, React et Node.js.
+  </p>
+          <div class="button-group">
+            <a href="inscription.html" class="modern-btn"><span>S'inscrire</span><i class="fas fa-arrow-right"></i></a>
+            <a href="docs/programme.pdf" class="modern-btn" download><span>Télécharger</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-contact">
+    <div class="contact-container">
+      <h2 class="contact-title">Restons en contact</h2>
+      <p class="contact-subtitle">Besoin d'information ? Une question sur nos formations ? Écrivez-nous !</p>
+      <form class="contact-form-glass">
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Nom complet</label>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <textarea rows="4" name="message" required></textarea>
+          <label>Votre message</label>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact : contact@bi-geek.net</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a>
+    </p>
+    <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+  </footer>
+
+  <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
+    📞
+  </div>
+
+  <!-- The search bar input mechanism (so that it gives u filtered results)-->
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const formationCards = document.querySelectorAll(".programme-box");
+
+  // Create and insert a 'no results' message container
+  const noResultsMsg = document.createElement("div");
+  noResultsMsg.textContent = "Aucun résultat trouvé.";
+  noResultsMsg.style.display = "none";
+  noResultsMsg.style.textAlign = "center";
+  noResultsMsg.style.marginTop = "20px";
+  noResultsMsg.style.fontSize = "1.2rem";
+  noResultsMsg.style.color = "gray";
+
+  // Insert message after the carousel
+  const carouselContainer = document.querySelector(".container");
+  carouselContainer.parentNode.insertBefore(noResultsMsg, carouselContainer.nextSibling);
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.trim().toLowerCase();
+    let hasResults = false;
+
+    formationCards.forEach(card => {
+      const title = card.querySelector("h5").textContent.toLowerCase();
+      if (title.includes(query)) {
+        card.style.display = "inline-block";
+        hasResults = true;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show/hide "no results" message
+    noResultsMsg.style.display = hasResults ? "none" : "block";
+  });
+</script>
+
+
+
+</body>
+</html>
