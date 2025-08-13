@@ -22,25 +22,38 @@
 
 <body class="prog-page">
   <!-- Header -->
-  <header id="header">
-    <div class="logo">
-      <img src="image/logo.avif" alt="Logo BI-Geek">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="Programmes.html">Programmes</a></li>
-        <li><a href="formation.html">Formations</a></li>
-        <li><a href="Projet.html">Projets</a></li>
-        <li><a href="propos.html">A propos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="#contact" class="contact-icon"><i class="fas fa-envelope"></i></a>
-      <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
-    </div>
-  </header>
+  <header class="scrolled"> 
+        <div class="logo">
+        <img src="image/logo.avif" alt="Logo BI-Geek">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Programmes.html" class="active">Programmes</a></li>
+                <li><a href="formation.html">Formations</a></li>
+                <li><a href="Projet.html" >Projets </a></li>
+                <li><a href="propos.html" >A propos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" id="contactToggle" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+            <div id="contact-popup" class="contact-popup hidden">
+                <div class="contact-popup-content">
+                    <button id="close-contact" class="close-btn">&times;</button>
+                    <h3>Contactez-nous</h3>
+                    <p><strong>Email :</strong> contact@bi-geek.net</p>
+                    <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053.</p>
+                </div>
+            </div>
+
+            <button class="btn secondary" onclick="location.href='connecter.html'">Se connecter</button>
+        </div>
+    </header>
 
   <!-- Hero Section -->
   <section class="detail-hero" style="background-image: url('image/detailformation.jpg');">
@@ -187,6 +200,28 @@
       });
     }
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("contactToggle");
+        const popup = document.getElementById("contact-popup");
+        const closeBtn = document.getElementById("close-contact");
+
+        toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.classList.toggle("hidden");
+        });
+
+     closeBtn.addEventListener("click", function () {
+          popup.classList.add("hidden");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+            popup.classList.add("hidden");
+          }
+        });
+    });
+    </script>
 </body>
 </html>
 

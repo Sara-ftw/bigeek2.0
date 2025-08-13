@@ -155,6 +155,27 @@
   <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
     📞
   </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("contactToggle");
+        const popup = document.getElementById("contact-popup");
+        const closeBtn = document.getElementById("close-contact");
 
+        toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.classList.toggle("hidden");
+        });
+
+     closeBtn.addEventListener("click", function () {
+          popup.classList.add("hidden");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+            popup.classList.add("hidden");
+          }
+        });
+    });
+    </script>
 </body>
 </html>
