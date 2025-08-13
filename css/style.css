@@ -148,6 +148,20 @@ header.scrolled .btn.secondary {
 header.scrolled .contact-icon {
   color: var(--hero-color);
 }
+/* Header spécifique pour Formation et Programmes */
+body.formation-page header,
+body.programmes-page header {
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.formation-page header nav a,
+body.programmes-page header nav a,
+body.formation-page .contact-icon,
+body.programmes-page .contact-icon {
+  color: var(--hero-color); /* ou la couleur des liens que tu veux */
+}
+
 
                   /****************/
 
@@ -244,16 +258,7 @@ header.scrolled .contact-icon {
 }
 
 
-/* Si tu veux que ça s'applique seulement à prog.html sans changer le header sur index.html */
-body.prog-page header {
-  background: var(--white);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
-body.prog-page header nav a,
-body.prog-page .contact-icon {
-  color: var(--hero-color);
-}
 
 
 /****************/
