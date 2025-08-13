@@ -170,41 +170,75 @@
   </main>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="section-contact">
-    <div class="contact-container">
-      <h2 class="contact-title">Restons en contact</h2>
-      <p class="contact-subtitle">Besoin d'information ? Une question sur nos formations ? Écrivez-nous !</p>
-      <form class="contact-form-glass">
-        <div class="input-group">
-          <input type="text" name="name" required>
-          <label>Nom complet</label>
-        </div>
-        <div class="input-group">
-          <input type="email" name="email" required>
-          <label>Email</label>
-        </div>
-        <div class="input-group">
-          <textarea rows="4" name="message" required></textarea>
-          <label>Votre message</label>
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
+  <section class="section-contact"> 
+    <h2 class="contact-title" data-aos="zoom-in" >Restons en contact</h2>
+    <p class="contact-subtitle" data-aos="zoom-in" >On vous répond sous 24h !</p>
+
+    <div class="contact-form-glass" data-aos="zoom-in" >
+        <form>
+            <div class="input-group">
+                <input type="text" required>
+                <label>Nom</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Adresse</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required>
+                <label>E-mail</label>
+            </div>
+
+            <div class="input-group">
+                <input type="tel" required>
+                <label>Téléphone</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Objet</label>
+            </div>
+
+            <div class="input-group">
+                <textarea required></textarea>
+                <label>Message</label>
+            </div>
+
+            <button type="submit">Envoyer</button>
+        </form>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Contact : contact@bi-geek.net</p>
-    <p>
-      <a href="#">Facebook</a> |
-      <a href="#">LinkedIn</a> |
-      <a href="#">Instagram</a>
-    </p>
-    <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
-  </footer>
+<!--footer  -->
 
+  <footer id="contact">
+    <div class="footer-left">
+        <form>
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <div class="footer-right">
+        <p>Contact : contact@bi-geek.net</p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">LinkedIn</a> |
+            <a href="#">Instagram</a>
+        </p>
+        <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
+    </div>
+    </footer>
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scrollToTop">
+    ↑
+  </button>
+
+  
   <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
-    📞
+    📞 
   </div>
 
   <!-- The search bar input mechanism (so that it gives u filtered results)-->
