@@ -148,21 +148,17 @@ header.scrolled .btn.secondary {
 header.scrolled .contact-icon {
   color: var(--hero-color);
 }
-/* Header spécifique pour Formation et Programmes */
-body.formation-page header,
-body.programmes-page header {
+
+/* Header blanc pour toutes les pages sauf index */
+body.page-white-header header {
   background: var(--white);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-body.formation-page header nav a,
-body.programmes-page header nav a,
-body.formation-page .contact-icon,
-body.programmes-page .contact-icon {
-  color: var(--hero-color); /* ou la couleur des liens que tu veux */
+body.page-white-header header nav a,
+body.page-white-header .contact-icon {
+  color: var(--mauve);
 }
-
-
                   /****************/
 
 
