@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BI-Geek - Accueil</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -18,10 +19,8 @@
 
   <!-- Ton CSS perso -->
     <link rel="stylesheet" href="css/style.css">
-
-
-</head>
-<body>
+  </head>
+  <body>
     <header class="scrolled">
         <div class="logo">
         <img src="image/logo.avif" alt="Logo BI-Geek">
@@ -47,7 +46,7 @@
                     <h3>Contactez-nous</h3>
                     <p><strong>Email :</strong> contact@bi-geek.net</p>
                     <p><strong>Téléphone :</strong> (+216) 58 611 283</p>
-                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053.</p>
+                    <p><strong>Adresse :</strong> 53 Rue Lac Léman Les Berges du Lac, 1053</p>
                 </div>
             </div>
 
@@ -55,75 +54,83 @@
         </div>
     </header>
 
+
+<!-- Hero Section -->
+  <section class="detail-hero" style="background-image: url('image/detailprojet.jpg');">
+    <div class="container">
+      <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+      <h1>Nom du Projet</h1>
+      <p class="lead">Présentation courte du projet du stagiaire et ses objectifs principaux.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="row">
+        <!-- Col gauche -->
+        <div class="col-lg-8" data-aos="fade-right">
+          <div class="info-card mb-5">
+            <h3>Description du projet</h3>
+            <p>Décrivez ici le projet : contexte, problématique, et rôle du stagiaire.</p>
+          </div>
+
+          <div class="info-card mb-5">
+            <h3>Objectifs du projet</h3>
+            <ul>
+              <li>Objectif 1</li>
+              <li>Objectif 2</li>
+              <li>Objectif 3</li>
+            </ul>
+          </div>
+
+          <div class="info-card mb-5">
+            <h3>Technologies et outils utilisés</h3>
+            <ul>
+              <li>Technologie 1</li>
+              <li>Technologie 2</li>
+              <li>Outil 3</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4" data-aos="fade-left">
+          <div class="sticky-side">
+            <h4>Informations du projet</h4>
+            <ul>
+              <li><strong>Durée :</strong> 3 mois</li>
+              <li><strong>Stagiaire :</strong> Nom du stagiaire</li>
+              <li><strong>Équipe :</strong> Nom de l’équipe / encadrant</li>
+              <li><strong>Livrables :</strong> Rapport, maquette, code source…</li>
+              <li><strong>Technologies :</strong> HTML, CSS, JS, etc.</li>
+            </ul>
+            <a href="Projet.html" class="cta-purple">Retour aux projets</a>
+            <a href="#" class="cta-purple">Télécharger rapport</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partager Section -->
+  <section class="share-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="share-title">Partager ce projet</h2>
+      <div class="share-icons">
+        <a href="#" class="share-btn fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="share-btn tw"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="share-btn li"><i class="fab fa-linkedin-in"></i></a>
+        <button class="share-btn copy" onclick="copyLink()"><i class="fas fa-link"></i></button>
+      </div>
+      <p id="copy-feedback" class="copy-feedback">Lien copié !</p>
+    </div>
+  </section>
+
   
 
-  <div class="register-container">
-    <h2><i class="fas fa-user-plus"></i> Créer un compte</h2>
-    <form class="register-form">
-      <div class="form-row">
-        <div class="input-icon">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Nom" name="lastname" required />
-        </div>
-        <div class="input-icon">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Prénom" name="firstname" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-icon">
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Adresse email" name="email" required />
-        </div>
-        <div class="input-icon">
-          <i class="fas fa-phone"></i>
-          <input type="tel" placeholder="Numéro de téléphone" name="phone" pattern="[0-9]{8,15}" title="Numéro entre 8 et 15 chiffres" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-icon">
-          <i class="fas fa-calendar"></i>
-          <input type="number" placeholder="Âge" name="age" min="13" max="120" required />
-        </div>
-        <div class="input-icon select-icon">
-          <i class="fas fa-venus-mars"></i>
-          <select name="sex" required>
-            <option value="" disabled selected>Sexe</option>
-            <option value="homme">Homme</option>
-            <option value="femme">Femme</option>
-            <option value="autre">Autre</option>
-            <option value="prefere_ne_pas_dire">Préfère ne pas dire</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-icon" style="flex: 1 1 100%;">
-          <i class="fas fa-home"></i>
-          <input type="text" placeholder="Adresse" name="address" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-icon" style="flex: 1 1 100%;">
-          <i class="fas fa-heart"></i>
-          <input type="text" placeholder="Centres d’intérêt (ex: Tech, Sport, Art...)" name="interests" />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-icon">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Mot de passe" name="password" required />
-        </div>
-        <div class="input-icon">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Confirmer le mot de passe" name="confirm_password" required />
-        </div>
-      </div>
-      <button type="submit" class="btn-submit">S’inscrire</button>
-    </form>
-  </div>
 
-
-  <footer id="contact">
+    <footer id="contact">
     <div class="footer-left">
         <form>
             <input type="email" placeholder="Votre email" required>
@@ -140,7 +147,7 @@
         </p>
         <p>&copy; 2025 BI-Geek. Tous droits réservés.</p>
     </div>
-  </footer>
+    </footer>
 
 
     <div class="contact-footer-right" role="button" tabindex="0" aria-label="Contactez-nous">
@@ -149,11 +156,12 @@
     
 
 
+
     <script>
         AOS.init();
     </script>
 
-   <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.getElementById("contactToggle");
     const popup = document.getElementById("contact-popup");
@@ -175,7 +183,9 @@
     });
   });
 </script>
-   
+    <!-- CSS AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
     <!-- JS AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -186,9 +196,9 @@
     <script src="js/script.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+    <script> AOS.init(); </script>
 
 
 
-</body>
+  </body>
 </html>
