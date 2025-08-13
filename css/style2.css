@@ -1,3 +1,26 @@
+:root {
+    --mauve: #6c5ce7;
+    --mauve-dark: #5a4bcf;
+    --mauve-light: #a29bfe;
+    --bg-light: #f5f6fa;
+    --bg-grey: #e0e0f0;   
+    --font: 'Poppins', sans-serif;
+    --text-dark: #2d2d2d;
+    --text-grey: #555;
+    --hero-color: #1f1660;
+    --mauve: #4b2279;
+    --mauve-dark: #5a4bcf;
+    --mauve-light: #a29bfe;
+    --main-purple: var(--mauve);  /* for consistency */
+    --hero-color: var(--mauve);   /* used on scroll */
+    --white: #ffffff;
+    --transition-speed: 0.3s;
+     --violet-bi: #422473;
+    --violet-light: #8c78bb;
+    --text-dark: #222;
+    --bg-light: #f9f9fc;
+    }
+
 /*////////////////////////////////////////// from here startes my work (sara) ////////////////////////////////////////////////*/
 
 .btn-purple {
@@ -382,15 +405,7 @@
 
 /*////////////////////////////////////////////// page detail taa button taa formation ////////////////*/
 
-:root {
-  --mauve: #7f5af0;
-  --mauve-light: #a78bfa;
-  --violet-light: #e0d7ff;
-  --lavender: #f5f3ff;
-  --bg-light: #f9f8fc;
-  --text-dark: #2d2d2d;
-  --btn-hover: #dec9ff;
-}
+
 
 .detail-hero {
   position: relative;
@@ -400,6 +415,8 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  margin-top: 40px;
+  height: 100%;
 }
 
 /* Purple gradient overlay */
@@ -535,8 +552,14 @@ background-color: var(--bg-light);
   margin-bottom: 10px;
 }
 
+:root {
+  --bg-light: #f9f8fc;
+  --text-dark:#2d2d2d ;
+  --btn-hover: #dec9ff;
+}
+
 .cta-purple {
-  background: var(--mauve-light);
+  background: var(#a78bfa);
   color: white;
   font-weight: 600;
   padding: 12px 18px;
