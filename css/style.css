@@ -209,6 +209,7 @@ header.scrolled .contact-icon {
   padding-left: 40px;
   text-align: left;
   overflow: hidden;
+  margin-bottom: 60px;
 }
 .btn-purple {
   background-color: #6a0dad; /* violet foncé */
@@ -562,14 +563,21 @@ footer .footer-right {
   padding: 80px 20px;
   background: var(--bg-light);
   text-align: center;
+  margin-top: 40px;
 }
 
-.bi-revolution h2,
+.bi-revolution h2{
+  color: var(--mauve);
+  font-weight: 700;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
 .bi-revolution h3 {
   color: var(--mauve);
   font-weight: 700;
   margin-bottom: 40px;
   font-size: 2rem;
+  margin-top: 40px;
 }
 /* image gauche, texte droite, tout centré */
 .tab-slide {
@@ -648,17 +656,21 @@ footer .footer-right {
 /******/
 
 .accordion-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 50px auto;
   border-radius: 14px;
   overflow: hidden;
   box-sizing: border-box;
+  display: grid;          /* creates a column layout */
+  gap: 1.8rem;            /* spacing between cards, no margin-collapsing */
+
 }
 
 .accordion-item {
   position: relative;
-  margin-bottom: 1.8rem;
+  margin: 0;
   border-radius: 14px;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
   color: white;
@@ -677,6 +689,7 @@ footer .footer-right {
 .accordion-item::before {
   content: "";
   position: absolute;
+  overflow: hidden;
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
   border-radius: 14px;
